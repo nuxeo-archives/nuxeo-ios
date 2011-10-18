@@ -1,0 +1,802 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F438871144D915B006F4C97 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F438870144D915B006F4C97 /* SenTestingKit.framework */; };
+		5F438873144D915B006F4C97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F438872144D915B006F4C97 /* Cocoa.framework */; };
+		5F43887D144D915B006F4C97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F43887B144D915B006F4C97 /* InfoPlist.strings */; };
+		5F438880144D915B006F4C97 /* AutomationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43887F144D915B006F4C97 /* AutomationTest.m */; };
+		5F43889B144DC02F006F4C97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCF2536144D72E300B10B96 /* Foundation.framework */; };
+		5F4388A5144DC085006F4C97 /* NXOperationDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F438824144D90C5006F4C97 /* NXOperationDefinition.m */; };
+		5F4388A6144DC085006F4C97 /* NXOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F438886144D94FA006F4C97 /* NXOperation.m */; };
+		5F4388A7144DC085006F4C97 /* NXOperationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F438889144DA1BD006F4C97 /* NXOperationResult.m */; };
+		5F4388A8144DC085006F4C97 /* NXOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43888F144DA290006F4C97 /* NXOperationQueue.m */; };
+		5F4388A9144DC085006F4C97 /* NXNuxeoErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F438893144DB70B006F4C97 /* NXNuxeoErrors.m */; };
+		5F4388AA144DC3BE006F4C97 /* NXOperationDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F438823144D90C5006F4C97 /* NXOperationDefinition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F4388AB144DC3BE006F4C97 /* NXOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F438885144D94FA006F4C97 /* NXOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F4388AC144DC3BE006F4C97 /* NXOperationResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F438888144DA1BD006F4C97 /* NXOperationResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F4388AD144DC3BE006F4C97 /* NXOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F43888E144DA290006F4C97 /* NXOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F4388AE144DC3BE006F4C97 /* NXOperationQueue_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F438891144DAB12006F4C97 /* NXOperationQueue_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		5F4388AF144DC3BE006F4C97 /* NXNuxeoErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F438892144DB70B006F4C97 /* NXNuxeoErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F4388B0144DC3BE006F4C97 /* NXNuxeoBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F438895144DB752006F4C97 /* NXNuxeoBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC6E127144DC719001BAC79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F4388C0144DC60B006F4C97 /* UIKit.framework */; };
+		5FC6E128144DC719001BAC79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCF2536144D72E300B10B96 /* Foundation.framework */; };
+		5FC6E129144DC719001BAC79 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F4388C3144DC60B006F4C97 /* CoreGraphics.framework */; };
+		5FC6E12F144DC719001BAC79 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FC6E12D144DC719001BAC79 /* InfoPlist.strings */; };
+		5FC6E131144DC719001BAC79 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6E130144DC719001BAC79 /* main.m */; };
+		5FC6E135144DC719001BAC79 /* NXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6E134144DC719001BAC79 /* NXAppDelegate.m */; };
+		5FC6E138144DC719001BAC79 /* NXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6E137144DC719001BAC79 /* NXViewController.m */; };
+		5FC6E13B144DC719001BAC79 /* NXViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC6E139144DC719001BAC79 /* NXViewController.xib */; };
+		5FC6E142144DCA83001BAC79 /* libNuxeoAutomation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F43889A144DC02F006F4C97 /* libNuxeoAutomation.a */; };
+		5FC6E149144DCB8B001BAC79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F4388C0144DC60B006F4C97 /* UIKit.framework */; };
+		5FC6E14A144DCB8B001BAC79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCF2536144D72E300B10B96 /* Foundation.framework */; };
+		5FC6E14B144DCB8B001BAC79 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F4388C3144DC60B006F4C97 /* CoreGraphics.framework */; };
+		5FC6E151144DCB8B001BAC79 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FC6E14F144DCB8B001BAC79 /* InfoPlist.strings */; };
+		5FC6E153144DCB8B001BAC79 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6E152144DCB8B001BAC79 /* main.m */; };
+		5FC6E157144DCB8C001BAC79 /* NXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6E156144DCB8C001BAC79 /* NXAppDelegate.m */; };
+		5FC6E15A144DCB8C001BAC79 /* NXMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6E159144DCB8C001BAC79 /* NXMasterViewController.m */; };
+		5FC6E15D144DCB8C001BAC79 /* NXDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC6E15C144DCB8C001BAC79 /* NXDetailViewController.m */; };
+		5FC6E160144DCB8C001BAC79 /* NXMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC6E15E144DCB8C001BAC79 /* NXMasterViewController.xib */; };
+		5FC6E163144DCB8C001BAC79 /* NXDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC6E161144DCB8C001BAC79 /* NXDetailViewController.xib */; };
+		5FC6E169144DCBC1001BAC79 /* libNuxeoAutomation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F43889A144DC02F006F4C97 /* libNuxeoAutomation.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5FC6E140144DCA7E001BAC79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FCF2529144D72E200B10B96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F438899144DC02F006F4C97;
+			remoteInfo = NuxeoAutomation;
+		};
+		5FC6E167144DCBBC001BAC79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FCF2529144D72E200B10B96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F438899144DC02F006F4C97;
+			remoteInfo = NuxeoAutomation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5F438823144D90C5006F4C97 /* NXOperationDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXOperationDefinition.h; sourceTree = "<group>"; };
+		5F438824144D90C5006F4C97 /* NXOperationDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXOperationDefinition.m; sourceTree = "<group>"; };
+		5F43886F144D915B006F4C97 /* AutomationTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutomationTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F438870144D915B006F4C97 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		5F438872144D915B006F4C97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		5F438875144D915B006F4C97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		5F438876144D915B006F4C97 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5F438877144D915B006F4C97 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5F43887A144D915B006F4C97 /* AutomationTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutomationTest-Info.plist"; sourceTree = "<group>"; };
+		5F43887C144D915B006F4C97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5F43887E144D915B006F4C97 /* AutomationTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutomationTest.h; sourceTree = "<group>"; };
+		5F43887F144D915B006F4C97 /* AutomationTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutomationTest.m; sourceTree = "<group>"; };
+		5F438881144D915B006F4C97 /* AutomationTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutomationTest-Prefix.pch"; sourceTree = "<group>"; };
+		5F438885144D94FA006F4C97 /* NXOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXOperation.h; sourceTree = "<group>"; };
+		5F438886144D94FA006F4C97 /* NXOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXOperation.m; sourceTree = "<group>"; };
+		5F438888144DA1BD006F4C97 /* NXOperationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXOperationResult.h; sourceTree = "<group>"; };
+		5F438889144DA1BD006F4C97 /* NXOperationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXOperationResult.m; sourceTree = "<group>"; };
+		5F43888E144DA290006F4C97 /* NXOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXOperationQueue.h; sourceTree = "<group>"; };
+		5F43888F144DA290006F4C97 /* NXOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXOperationQueue.m; sourceTree = "<group>"; };
+		5F438891144DAB12006F4C97 /* NXOperationQueue_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXOperationQueue_Private.h; sourceTree = "<group>"; };
+		5F438892144DB70B006F4C97 /* NXNuxeoErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXNuxeoErrors.h; sourceTree = "<group>"; };
+		5F438893144DB70B006F4C97 /* NXNuxeoErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXNuxeoErrors.m; sourceTree = "<group>"; };
+		5F438895144DB752006F4C97 /* NXNuxeoBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXNuxeoBase.h; sourceTree = "<group>"; };
+		5F43889A144DC02F006F4C97 /* libNuxeoAutomation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNuxeoAutomation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F4388C0144DC60B006F4C97 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		5F4388C3144DC60B006F4C97 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		5FC6E125144DC719001BAC79 /* MiniDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FC6E12C144DC719001BAC79 /* MiniDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MiniDemo-Info.plist"; sourceTree = "<group>"; };
+		5FC6E12E144DC719001BAC79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FC6E130144DC719001BAC79 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5FC6E132144DC719001BAC79 /* MiniDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MiniDemo-Prefix.pch"; sourceTree = "<group>"; };
+		5FC6E133144DC719001BAC79 /* NXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXAppDelegate.h; sourceTree = "<group>"; };
+		5FC6E134144DC719001BAC79 /* NXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXAppDelegate.m; sourceTree = "<group>"; };
+		5FC6E136144DC719001BAC79 /* NXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXViewController.h; sourceTree = "<group>"; };
+		5FC6E137144DC719001BAC79 /* NXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXViewController.m; sourceTree = "<group>"; };
+		5FC6E13A144DC719001BAC79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NXViewController.xib; sourceTree = "<group>"; };
+		5FC6E147144DCB8B001BAC79 /* DocumentListDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentListDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FC6E14E144DCB8B001BAC79 /* DocumentListDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DocumentListDemo-Info.plist"; sourceTree = "<group>"; };
+		5FC6E150144DCB8B001BAC79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FC6E152144DCB8B001BAC79 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5FC6E154144DCB8B001BAC79 /* DocumentListDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DocumentListDemo-Prefix.pch"; sourceTree = "<group>"; };
+		5FC6E155144DCB8B001BAC79 /* NXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXAppDelegate.h; sourceTree = "<group>"; };
+		5FC6E156144DCB8C001BAC79 /* NXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXAppDelegate.m; sourceTree = "<group>"; };
+		5FC6E158144DCB8C001BAC79 /* NXMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXMasterViewController.h; sourceTree = "<group>"; };
+		5FC6E159144DCB8C001BAC79 /* NXMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXMasterViewController.m; sourceTree = "<group>"; };
+		5FC6E15B144DCB8C001BAC79 /* NXDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXDetailViewController.h; sourceTree = "<group>"; };
+		5FC6E15C144DCB8C001BAC79 /* NXDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXDetailViewController.m; sourceTree = "<group>"; };
+		5FC6E15F144DCB8C001BAC79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NXMasterViewController.xib; sourceTree = "<group>"; };
+		5FC6E162144DCB8C001BAC79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NXDetailViewController.xib; sourceTree = "<group>"; };
+		5FCF2536144D72E300B10B96 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F43886B144D915B006F4C97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F438871144D915B006F4C97 /* SenTestingKit.framework in Frameworks */,
+				5F438873144D915B006F4C97 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F438897144DC02F006F4C97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F43889B144DC02F006F4C97 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FC6E122144DC719001BAC79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC6E127144DC719001BAC79 /* UIKit.framework in Frameworks */,
+				5FC6E128144DC719001BAC79 /* Foundation.framework in Frameworks */,
+				5FC6E129144DC719001BAC79 /* CoreGraphics.framework in Frameworks */,
+				5FC6E142144DCA83001BAC79 /* libNuxeoAutomation.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FC6E144144DCB8B001BAC79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC6E149144DCB8B001BAC79 /* UIKit.framework in Frameworks */,
+				5FC6E14A144DCB8B001BAC79 /* Foundation.framework in Frameworks */,
+				5FC6E14B144DCB8B001BAC79 /* CoreGraphics.framework in Frameworks */,
+				5FC6E169144DCBC1001BAC79 /* libNuxeoAutomation.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F43881E144D74A9006F4C97 /* NuxeoSDK */ = {
+			isa = PBXGroup;
+			children = (
+				5F438823144D90C5006F4C97 /* NXOperationDefinition.h */,
+				5F438824144D90C5006F4C97 /* NXOperationDefinition.m */,
+				5F438885144D94FA006F4C97 /* NXOperation.h */,
+				5F438886144D94FA006F4C97 /* NXOperation.m */,
+				5F438888144DA1BD006F4C97 /* NXOperationResult.h */,
+				5F438889144DA1BD006F4C97 /* NXOperationResult.m */,
+				5F43888E144DA290006F4C97 /* NXOperationQueue.h */,
+				5F438891144DAB12006F4C97 /* NXOperationQueue_Private.h */,
+				5F43888F144DA290006F4C97 /* NXOperationQueue.m */,
+				5F438892144DB70B006F4C97 /* NXNuxeoErrors.h */,
+				5F438893144DB70B006F4C97 /* NXNuxeoErrors.m */,
+				5F438895144DB752006F4C97 /* NXNuxeoBase.h */,
+			);
+			path = NuxeoSDK;
+			sourceTree = "<group>";
+		};
+		5F438874144D915B006F4C97 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F438875144D915B006F4C97 /* AppKit.framework */,
+				5F438876144D915B006F4C97 /* CoreData.framework */,
+				5F438877144D915B006F4C97 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		5F438878144D915B006F4C97 /* AutomationTest */ = {
+			isa = PBXGroup;
+			children = (
+				5F43887E144D915B006F4C97 /* AutomationTest.h */,
+				5F43887F144D915B006F4C97 /* AutomationTest.m */,
+				5F438879144D915B006F4C97 /* Supporting Files */,
+			);
+			path = AutomationTest;
+			sourceTree = "<group>";
+		};
+		5F438879144D915B006F4C97 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F43887A144D915B006F4C97 /* AutomationTest-Info.plist */,
+				5F43887B144D915B006F4C97 /* InfoPlist.strings */,
+				5F438881144D915B006F4C97 /* AutomationTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FC6E12A144DC719001BAC79 /* MiniDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5FC6E133144DC719001BAC79 /* NXAppDelegate.h */,
+				5FC6E134144DC719001BAC79 /* NXAppDelegate.m */,
+				5FC6E136144DC719001BAC79 /* NXViewController.h */,
+				5FC6E137144DC719001BAC79 /* NXViewController.m */,
+				5FC6E139144DC719001BAC79 /* NXViewController.xib */,
+				5FC6E12B144DC719001BAC79 /* Supporting Files */,
+			);
+			path = MiniDemo;
+			sourceTree = "<group>";
+		};
+		5FC6E12B144DC719001BAC79 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FC6E12C144DC719001BAC79 /* MiniDemo-Info.plist */,
+				5FC6E12D144DC719001BAC79 /* InfoPlist.strings */,
+				5FC6E130144DC719001BAC79 /* main.m */,
+				5FC6E132144DC719001BAC79 /* MiniDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FC6E14C144DCB8B001BAC79 /* DocumentListDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5FC6E155144DCB8B001BAC79 /* NXAppDelegate.h */,
+				5FC6E156144DCB8C001BAC79 /* NXAppDelegate.m */,
+				5FC6E158144DCB8C001BAC79 /* NXMasterViewController.h */,
+				5FC6E159144DCB8C001BAC79 /* NXMasterViewController.m */,
+				5FC6E15B144DCB8C001BAC79 /* NXDetailViewController.h */,
+				5FC6E15C144DCB8C001BAC79 /* NXDetailViewController.m */,
+				5FC6E15E144DCB8C001BAC79 /* NXMasterViewController.xib */,
+				5FC6E161144DCB8C001BAC79 /* NXDetailViewController.xib */,
+				5FC6E14D144DCB8B001BAC79 /* Supporting Files */,
+			);
+			path = DocumentListDemo;
+			sourceTree = "<group>";
+		};
+		5FC6E14D144DCB8B001BAC79 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FC6E14E144DCB8B001BAC79 /* DocumentListDemo-Info.plist */,
+				5FC6E14F144DCB8B001BAC79 /* InfoPlist.strings */,
+				5FC6E152144DCB8B001BAC79 /* main.m */,
+				5FC6E154144DCB8B001BAC79 /* DocumentListDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FCF2527144D72E200B10B96 = {
+			isa = PBXGroup;
+			children = (
+				5F43881E144D74A9006F4C97 /* NuxeoSDK */,
+				5F438878144D915B006F4C97 /* AutomationTest */,
+				5FC6E12A144DC719001BAC79 /* MiniDemo */,
+				5FC6E14C144DCB8B001BAC79 /* DocumentListDemo */,
+				5FCF2535144D72E300B10B96 /* Frameworks */,
+				5FCF2533144D72E300B10B96 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5FCF2533144D72E300B10B96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F43886F144D915B006F4C97 /* AutomationTest.octest */,
+				5F43889A144DC02F006F4C97 /* libNuxeoAutomation.a */,
+				5FC6E125144DC719001BAC79 /* MiniDemo.app */,
+				5FC6E147144DCB8B001BAC79 /* DocumentListDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5FCF2535144D72E300B10B96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FCF2536144D72E300B10B96 /* Foundation.framework */,
+				5F438870144D915B006F4C97 /* SenTestingKit.framework */,
+				5F438872144D915B006F4C97 /* Cocoa.framework */,
+				5F4388C0144DC60B006F4C97 /* UIKit.framework */,
+				5F4388C3144DC60B006F4C97 /* CoreGraphics.framework */,
+				5F438874144D915B006F4C97 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5F438898144DC02F006F4C97 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F4388AA144DC3BE006F4C97 /* NXOperationDefinition.h in Headers */,
+				5F4388AB144DC3BE006F4C97 /* NXOperation.h in Headers */,
+				5F4388AC144DC3BE006F4C97 /* NXOperationResult.h in Headers */,
+				5F4388AD144DC3BE006F4C97 /* NXOperationQueue.h in Headers */,
+				5F4388AE144DC3BE006F4C97 /* NXOperationQueue_Private.h in Headers */,
+				5F4388AF144DC3BE006F4C97 /* NXNuxeoErrors.h in Headers */,
+				5F4388B0144DC3BE006F4C97 /* NXNuxeoBase.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5F43886E144D915B006F4C97 /* AutomationTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F438882144D915B006F4C97 /* Build configuration list for PBXNativeTarget "AutomationTest" */;
+			buildPhases = (
+				5F43886A144D915B006F4C97 /* Sources */,
+				5F43886B144D915B006F4C97 /* Frameworks */,
+				5F43886C144D915B006F4C97 /* Resources */,
+				5F43886D144D915B006F4C97 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutomationTest;
+			productName = AutomationTest;
+			productReference = 5F43886F144D915B006F4C97 /* AutomationTest.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		5F438899144DC02F006F4C97 /* NuxeoAutomation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F4388A2144DC030006F4C97 /* Build configuration list for PBXNativeTarget "NuxeoAutomation" */;
+			buildPhases = (
+				5F438896144DC02F006F4C97 /* Sources */,
+				5F438897144DC02F006F4C97 /* Frameworks */,
+				5F438898144DC02F006F4C97 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NuxeoAutomation;
+			productName = NuxeoAutomation;
+			productReference = 5F43889A144DC02F006F4C97 /* libNuxeoAutomation.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5FC6E124144DC719001BAC79 /* MiniDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FC6E13E144DC719001BAC79 /* Build configuration list for PBXNativeTarget "MiniDemo" */;
+			buildPhases = (
+				5FC6E121144DC719001BAC79 /* Sources */,
+				5FC6E122144DC719001BAC79 /* Frameworks */,
+				5FC6E123144DC719001BAC79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FC6E141144DCA7E001BAC79 /* PBXTargetDependency */,
+			);
+			name = MiniDemo;
+			productName = MiniDemo;
+			productReference = 5FC6E125144DC719001BAC79 /* MiniDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5FC6E146144DCB8B001BAC79 /* DocumentListDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FC6E164144DCB8C001BAC79 /* Build configuration list for PBXNativeTarget "DocumentListDemo" */;
+			buildPhases = (
+				5FC6E143144DCB8B001BAC79 /* Sources */,
+				5FC6E144144DCB8B001BAC79 /* Frameworks */,
+				5FC6E145144DCB8B001BAC79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FC6E168144DCBBC001BAC79 /* PBXTargetDependency */,
+			);
+			name = DocumentListDemo;
+			productName = DocumentListDemo;
+			productReference = 5FC6E147144DCB8B001BAC79 /* DocumentListDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5FCF2529144D72E200B10B96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = Nuxeo;
+			};
+			buildConfigurationList = 5FCF252C144D72E200B10B96 /* Build configuration list for PBXProject "AutomationClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5FCF2527144D72E200B10B96;
+			productRefGroup = 5FCF2533144D72E300B10B96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F438899144DC02F006F4C97 /* NuxeoAutomation */,
+				5F43886E144D915B006F4C97 /* AutomationTest */,
+				5FC6E124144DC719001BAC79 /* MiniDemo */,
+				5FC6E146144DCB8B001BAC79 /* DocumentListDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F43886C144D915B006F4C97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F43887D144D915B006F4C97 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FC6E123144DC719001BAC79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC6E12F144DC719001BAC79 /* InfoPlist.strings in Resources */,
+				5FC6E13B144DC719001BAC79 /* NXViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FC6E145144DCB8B001BAC79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC6E151144DCB8B001BAC79 /* InfoPlist.strings in Resources */,
+				5FC6E160144DCB8C001BAC79 /* NXMasterViewController.xib in Resources */,
+				5FC6E163144DCB8C001BAC79 /* NXDetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F43886D144D915B006F4C97 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F43886A144D915B006F4C97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F438880144D915B006F4C97 /* AutomationTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F438896144DC02F006F4C97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F4388A5144DC085006F4C97 /* NXOperationDefinition.m in Sources */,
+				5F4388A6144DC085006F4C97 /* NXOperation.m in Sources */,
+				5F4388A7144DC085006F4C97 /* NXOperationResult.m in Sources */,
+				5F4388A8144DC085006F4C97 /* NXOperationQueue.m in Sources */,
+				5F4388A9144DC085006F4C97 /* NXNuxeoErrors.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FC6E121144DC719001BAC79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC6E131144DC719001BAC79 /* main.m in Sources */,
+				5FC6E135144DC719001BAC79 /* NXAppDelegate.m in Sources */,
+				5FC6E138144DC719001BAC79 /* NXViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FC6E143144DCB8B001BAC79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC6E153144DCB8B001BAC79 /* main.m in Sources */,
+				5FC6E157144DCB8C001BAC79 /* NXAppDelegate.m in Sources */,
+				5FC6E15A144DCB8C001BAC79 /* NXMasterViewController.m in Sources */,
+				5FC6E15D144DCB8C001BAC79 /* NXDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5FC6E141144DCA7E001BAC79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F438899144DC02F006F4C97 /* NuxeoAutomation */;
+			targetProxy = 5FC6E140144DCA7E001BAC79 /* PBXContainerItemProxy */;
+		};
+		5FC6E168144DCBBC001BAC79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F438899144DC02F006F4C97 /* NuxeoAutomation */;
+			targetProxy = 5FC6E167144DCBBC001BAC79 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5F43887B144D915B006F4C97 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F43887C144D915B006F4C97 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5FC6E12D144DC719001BAC79 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FC6E12E144DC719001BAC79 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5FC6E139144DC719001BAC79 /* NXViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FC6E13A144DC719001BAC79 /* en */,
+			);
+			name = NXViewController.xib;
+			sourceTree = "<group>";
+		};
+		5FC6E14F144DCB8B001BAC79 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FC6E150144DCB8B001BAC79 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5FC6E15E144DCB8C001BAC79 /* NXMasterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FC6E15F144DCB8C001BAC79 /* en */,
+			);
+			name = NXMasterViewController.xib;
+			sourceTree = "<group>";
+		};
+		5FC6E161144DCB8C001BAC79 /* NXDetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FC6E162144DCB8C001BAC79 /* en */,
+			);
+			name = NXDetailViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5F438883144D915B006F4C97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AutomationTest/AutomationTest-Prefix.pch";
+				INFOPLIST_FILE = "AutomationTest/AutomationTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		5F438884144D915B006F4C97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AutomationTest/AutomationTest-Prefix.pch";
+				INFOPLIST_FILE = "AutomationTest/AutomationTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		5F4388A3144DC030006F4C97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/NuxeoAutomation.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5F4388A4144DC030006F4C97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/NuxeoAutomation.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5FC6E13C144DC719001BAC79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MiniDemo/MiniDemo-Prefix.pch";
+				INFOPLIST_FILE = "MiniDemo/MiniDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5FC6E13D144DC719001BAC79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MiniDemo/MiniDemo-Prefix.pch";
+				INFOPLIST_FILE = "MiniDemo/MiniDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5FC6E165144DCB8C001BAC79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DocumentListDemo/DocumentListDemo-Prefix.pch";
+				INFOPLIST_FILE = "DocumentListDemo/DocumentListDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5FC6E166144DCB8C001BAC79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DocumentListDemo/DocumentListDemo-Prefix.pch";
+				INFOPLIST_FILE = "DocumentListDemo/DocumentListDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5FCF253F144D72E300B10B96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		5FCF2540144D72E300B10B96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F438882144D915B006F4C97 /* Build configuration list for PBXNativeTarget "AutomationTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F438883144D915B006F4C97 /* Debug */,
+				5F438884144D915B006F4C97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F4388A2144DC030006F4C97 /* Build configuration list for PBXNativeTarget "NuxeoAutomation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F4388A3144DC030006F4C97 /* Debug */,
+				5F4388A4144DC030006F4C97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FC6E13E144DC719001BAC79 /* Build configuration list for PBXNativeTarget "MiniDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FC6E13C144DC719001BAC79 /* Debug */,
+				5FC6E13D144DC719001BAC79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5FC6E164144DCB8C001BAC79 /* Build configuration list for PBXNativeTarget "DocumentListDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FC6E165144DCB8C001BAC79 /* Debug */,
+				5FC6E166144DCB8C001BAC79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5FCF252C144D72E200B10B96 /* Build configuration list for PBXProject "AutomationClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FCF253F144D72E300B10B96 /* Debug */,
+				5FCF2540144D72E300B10B96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5FCF2529144D72E200B10B96 /* Project object */;
+}
