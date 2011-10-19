@@ -202,22 +202,25 @@ const int DISPLAY_ELT = 0;
     
     def.identifier = @"Document.PageProvider";
     def.URI = @"Document.PageProvider";
-    
+
     NXOperation* op = [[NXOperation alloc] init];
     // default_document_suggestion
     op.definition = def;
     [def release];
-    
+
+
     if (!currentPage) {
         currentPage = 0;
     }
-    
+
     op.parameters = [NSDictionary dictionaryWithObjectsAndKeys:
                      @"default_document_suggestion", @"providerName",
-                     [NSArray arrayWithObject:fulltext], @"queryParams",
+                     fulltext, @"queryParams",
                      [NSNumber numberWithInt:DISPLAY_ELT], @"pageSize",
-                     [NSNumber numberWithInt:currentPage], @"page",
+                     //[NSNumber numberWithInt:currentPage], @"page",
                      nil];
+
+
     op.delegate = self;
     
     [((NXAppDelegate *)[UIApplication sharedApplication].delegate).queue executeOperation:op];
@@ -256,7 +259,7 @@ const int DISPLAY_ELT = 0;
 
 - (void)operation:(NXOperation *)operation didFailWithError:(NSError *)error
 {
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     
     [alert show];
     [alert release];

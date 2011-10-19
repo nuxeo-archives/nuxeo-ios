@@ -28,7 +28,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSURL* serverURL = [NSURL URLWithString:@"http://starship.denise.in.nuxeo.com/nuxeo/site/automation/"];
+    //NSURL* serverURL = [NSURL URLWithString:@"http://starship.denise.in.nuxeo.com/nuxeo/site/automation/"]; //5.4.3
+    NSURL* serverURL = [NSURL URLWithString:@"http://cmis.demo.nuxeo.com/nuxeo/site/automation/"]; //5.4.2
     
     queue = [[NXOperationQueue alloc] initWithServerURL:serverURL];
     queue.delegate = self;
@@ -121,7 +122,7 @@
         return;
     }
     NSLog(@"Using very strong user/password pair");
-    NSURLCredential* credential = [NSURLCredential credentialWithUser:@"Administrator" password:@"starship5" persistence:NSURLCredentialPersistenceNone];
+    NSURLCredential* credential = [NSURLCredential credentialWithUser:@"Administrator" password:@"Administrator" persistence:NSURLCredentialPersistenceNone];
     [[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
 }
 
