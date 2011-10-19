@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NXAppDelegate.h"
+#import "NXOperation.h"
+#import "NXOperationDefinition.h"
+#import "NXOperationResult.h"
 
-@interface DocumentTreeController : UITableViewController
+@interface DocumentTreeController : UITableViewController<NXOperationDelegate> {
+@private
+    NXOperation* currentOperation;
+    NSMutableArray* documentList;
+    NSString* _parentId;
+}
+
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil parentId:(NSString*)parentId;
 
 @end

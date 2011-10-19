@@ -10,6 +10,14 @@
 
 @implementation DocumentTreeController
 
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil parentId:(NSString*)parentId {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _parentId = parentId;
+    }
+    return self;
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -29,6 +37,16 @@
 
 #pragma mark - View lifecycle
 
+- (void)dealloc {
+    [currentOperation release];
+    currentOperation = nil;
+    [documentList release];
+    documentList = nil;
+    _parentId = nil;
+    
+    [super dealloc];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -38,6 +56,33 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    if (documentList) {
+        [documentList release];
+        documentList = nil;
+    }
+    
+    // make the operation
+    NXOperationDefinition* def = [[NXOperationDefinition alloc] init];
+    
+    def.identifier = @"Document.Query";
+    def.URI = @"Document.Query";
+    
+    NXOperation* op = [[NXOperation alloc] init];
+    // default_document_suggestion
+    op.definition = def;
+    [def release];
+    
+    NSString* query = [NSString stringWithFormat:@"SELECT * FROM Document WHERE ecm:parentId = '%@' AND ecm:isProxy = 0 AND ecm:mixinType != 'HiddenInNavigation' AND ecm:isCheckedInVersion = 0 AND ecm:currentLifeCycleState != 'deleted'", @"47e6464b-8d9b-4c63-b74c-e27641e9e96e"];
+    
+    op.parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                     query, @"query",
+                     nil];
+    op.delegate = self;
+    
+    [((NXAppDelegate *)[UIApplication sharedApplication].delegate).queue executeOperation:op];
+    
+    currentOperation = op;
 }
 
 - (void)viewDidUnload
@@ -77,14 +122,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return [documentList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -93,10 +137,13 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    // Configure the cell...
+    NSDictionary* document = [documentList objectAtIndex:indexPath.row];
+    cell.textLabel.text = [document objectForKey:@"title"];
+    cell.detailTextLabel.text = [document objectForKey:@"path"];
     
     return cell;
 }
@@ -144,14 +191,42 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    NSDictionary* document = [documentList objectAtIndex:indexPath.row];
+    NSArray* facets = [document objectForKey:@"facets"];
+    if ([facets indexOfObject:@"Folderish"]) {
+        DocumentTreeController* branch = [[DocumentTreeController alloc] initWithNibName:@"DocumentTreeController" bundle:nil parentId:[document objectForKey:@"uid"]];
+        
+        [self.navigationController pushViewController:branch animated:true];
+        
+        [branch release];
+    } else {
+        // Display detail view
+    }
+}
+
+#pragma mark NXOperationDelegate
+
+- (void)operation:(NXOperation *)operation didFailWithError:(NSError *)error
+{
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+    
+    [alert show];
+    
+    [alert release];
+    
+    [currentOperation release];
+    currentOperation = nil;
+}
+
+- (void)operation:(NXOperation *)operation didFinishWithResult:(NXOperationResult *)result
+{
+    [documentList release];
+    NSLog(@"Content results: %@", result.output);
+    documentList = [result.output retain];
+    [self.tableView reloadData];
+    
+    [currentOperation release];
+    currentOperation = nil;
 }
 
 @end
