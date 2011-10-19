@@ -8,7 +8,10 @@
 
 #import "SearchDocumentController.h"
 
+const int DISPLAY_ELT = 0;
+
 @implementation SearchDocumentController
+@synthesize searchBarView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +38,7 @@
     [documentList release];
     documentList = nil;
     
+    [searchBarView release];
     [super dealloc];
 }
 
@@ -51,6 +55,7 @@
 
 - (void)viewDidUnload
 {
+    [self setSearchBarView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -94,25 +99,54 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (documentList) {
+        //return [documentList count] + 1;
         return [documentList count];
     } else {
         return 0;
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell*) getDefaultTableViewCell:(UITableView*)tableView {
     static NSString *CellIdentifier = @"Cell";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
+    //[self performSearchDocument:[[self searchBarView] text]];
+    return cell;
+}
+- (UITableViewCell*) getMoreTableViewCell:(UITableView*)tableView {
+    static NSString *CellIdentifier = @"NXCellMore";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    cell.textLabel.text = @"Displaying more item";
+    cell.textLabel.textAlignment = UITextAlignmentCenter;
     
-    NSDictionary* document = [documentList objectAtIndex:indexPath.row];
-    cell.textLabel.text = [document objectForKey:@"title"];
-    cell.detailTextLabel.text = [document objectForKey:@"path"];
+    UIActivityIndicatorView *activity = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] autorelease];
+    [activity startAnimating];
+    activity.frame = CGRectMake(20, 13, activity.frame.size.width, activity.frame.size.height);
+    [cell addSubview:activity];
+    
+    // If drawn, we should append more document
+    return cell;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell;
+    NSLog(@"documentList docs: %d and indexPath: %d", [documentList count], indexPath.row);
+    if (documentList && (indexPath.row == [documentList count])) {
+        cell = [self getMoreTableViewCell:tableView];
+    } else {
+        cell = [self getDefaultTableViewCell:tableView];
+        
+        NSDictionary* document = [documentList objectAtIndex:indexPath.row];
+        cell.textLabel.text = [document objectForKey:@"title"];
+        cell.detailTextLabel.text = [document objectForKey:@"path"];
+    }
     
     return cell;
 }
@@ -156,6 +190,41 @@
  }
  */
 
+#pragma mark - 
+- (void) performSearchDocument:(NSString*) fulltext {
+    if (documentList) {
+        [documentList release];
+        documentList = nil;
+    }
+    
+    // make the operation
+    NXOperationDefinition* def = [[NXOperationDefinition alloc] init];
+    
+    def.identifier = @"Document.PageProvider";
+    def.URI = @"Document.PageProvider";
+    
+    NXOperation* op = [[NXOperation alloc] init];
+    // default_document_suggestion
+    op.definition = def;
+    [def release];
+    
+    if (!currentPage) {
+        currentPage = 0;
+    }
+    
+    op.parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                     @"default_document_suggestion", @"providerName",
+                     [NSArray arrayWithObject:fulltext], @"queryParams",
+                     [NSNumber numberWithInt:DISPLAY_ELT], @"pageSize",
+                     [NSNumber numberWithInt:currentPage], @"page",
+                     nil];
+    op.delegate = self;
+    
+    [((NXAppDelegate *)[UIApplication sharedApplication].delegate).queue executeOperation:op];
+    
+    currentOperation = op;
+}
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -174,41 +243,13 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     NSLog(@"Search button");
-    if (documentList) {
-        [documentList release];
-        documentList = nil;
-    }
-    
-    // make the operation
-    NXOperationDefinition* def = [[NXOperationDefinition alloc] init];
-    
-    def.identifier = @"Document.PageProvider";
-    def.URI = @"Document.PageProvider";
-    
-    NXOperation* op = [[NXOperation alloc] init];
-    // default_document_suggestion
-    op.definition = def;
-    [def release];
-
-    op.parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                     @"default_document_suggestion", @"providerName", [NSArray arrayWithObject:searchBar.text], @"queryParams", @"15", @"pageSize", nil];
-    op.delegate = self;
-    
-    [((NXAppDelegate *)[UIApplication sharedApplication].delegate).queue executeOperation:op];
-    
-    currentOperation = op;
-    
     [searchBar resignFirstResponder];
 }
 
-
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    NSLog(@"Text did begin");
-}
-
-
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
-    NSLog(@"Text did end");
+    NSLog(@"Text end editing");
+    currentPage = 0;
+    [self performSearchDocument:searchBar.text];
 }
 
 # pragma mark NXOperationDelegate
@@ -223,11 +264,19 @@
 
 - (void)operation:(NXOperation *)operation didFinishWithResult:(NXOperationResult *)result
 {
-    [documentList release];
-    documentList = [result.output retain];
     NSLog(@"There is %d docs", [documentList count]);
     NSLog(@"Data received: \n%@", result.output);
+    
+    if (currentPage == 0) {
+        [documentList release];
+        documentList = [result.output retain];
+    } else {
+        [documentList addObjectsFromArray:result.output];
+    }
+    
+    currentPage += 1;
     [self.tableView reloadData];
+    
     
     [currentOperation release];
     currentOperation = nil;

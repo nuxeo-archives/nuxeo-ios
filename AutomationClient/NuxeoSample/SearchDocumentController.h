@@ -15,7 +15,14 @@
 @interface SearchDocumentController : UITableViewController<UISearchBarDelegate, NXOperationDelegate> {
 @private
     NXOperation* currentOperation;
-    NSArray* documentList;
+    NSMutableArray* documentList;
+    Boolean shouldDisplayMore;
+    int currentPage;
 }
+@property (retain, nonatomic) IBOutlet UISearchBar *searchBarView;
+
+- (UITableViewCell*) getDefaultTableViewCell:(UITableView*) tableView;
+- (UITableViewCell*) getMoreTableViewCell:(UITableView*) tableView;
+- (void) performSearchDocument:(NSString*) fulltext;
 
 @end
