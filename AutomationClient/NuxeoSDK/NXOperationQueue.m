@@ -26,6 +26,7 @@
     NSMutableURLRequest* result = [[NSMutableURLRequest alloc] initWithURL:realURL cachePolicy:0 timeoutInterval:60.0f];
     [result setHTTPMethod:@"POST"];
     [result setValue:@"application/json+nxrequest" forHTTPHeaderField:@"Content-Type"];
+    [result setValue:@"common,dublincore" forHTTPHeaderField:@"X-NXDocumentProperties"];
     
     id input = operation.input;
     NSDictionary* params = operation.parameters;
