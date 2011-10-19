@@ -36,11 +36,17 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     UIViewController *documentTree = [[[DocumentTreeController alloc] initWithNibName:@"DocumentTreeController" bundle:nil] autorelease];
+    UINavigationController *navigationTree = [[[UINavigationController alloc] initWithRootViewController:documentTree] autorelease];
+    documentTree.title = @"Navigation";
+    
     UIViewController *viewController2 = [[[SearchDocumentController alloc] initWithNibName:@"SearchDocumentController" bundle:nil] autorelease];
+    UINavigationController *navigationSearch = [[[UINavigationController alloc] initWithRootViewController:viewController2] autorelease];
+    navigationSearch.title = @"Search";
+    
     UIViewController *viewController3 = [[[WorkingListController alloc] initWithNibName:@"WorkingListController" bundle:nil] autorelease];
     UIViewController *viewController4 = [[[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil] autorelease];
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:documentTree, viewController2,viewController3, viewController4, nil];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:navigationTree, navigationSearch,viewController3, viewController4, nil];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;

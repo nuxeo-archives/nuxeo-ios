@@ -22,7 +22,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.title = @"DocumentTree";
+        // Custom config
     }
     return self;
 }
@@ -73,7 +73,13 @@
     op.definition = def;
     [def release];
     
-    NSString* query = [NSString stringWithFormat:@"SELECT * FROM Document WHERE ecm:parentId = '%@' AND ecm:isProxy = 0 AND ecm:mixinType != 'HiddenInNavigation' AND ecm:isCheckedInVersion = 0 AND ecm:currentLifeCycleState != 'deleted'", @"47e6464b-8d9b-4c63-b74c-e27641e9e96e"];
+    NSString* query;
+    
+    if (_parentId) {
+        query = [NSString stringWithFormat:@"SELECT * FROM Document WHERE ecm:parentId = '%@' AND ecm:isProxy = 0 AND ecm:mixinType != 'HiddenInNavigation' AND ecm:isCheckedInVersion = 0 AND ecm:currentLifeCycleState != 'deleted'", _parentId];
+    } else {
+        query = @"SELECT * FROM Domain WHERE ecm:isProxy = 0 AND ecm:mixinType != 'HiddenInNavigation' AND ecm:isCheckedInVersion = 0 AND ecm:currentLifeCycleState != 'deleted'";
+    }
     
     op.parameters = [NSDictionary dictionaryWithObjectsAndKeys:
                      query, @"query",
@@ -145,6 +151,11 @@
     cell.textLabel.text = [document objectForKey:@"title"];
     cell.detailTextLabel.text = [document objectForKey:@"path"];
     
+    NSArray* facets = [document objectForKey:@"facets"];
+    if (![facets containsObject:@"Folderish"]) {
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;        
+    }
+    
     return cell;
 }
 
@@ -193,8 +204,9 @@
 {
     NSDictionary* document = [documentList objectAtIndex:indexPath.row];
     NSArray* facets = [document objectForKey:@"facets"];
-    if ([facets indexOfObject:@"Folderish"]) {
+    if ([facets containsObject:@"Folderish"]) {
         DocumentTreeController* branch = [[DocumentTreeController alloc] initWithNibName:@"DocumentTreeController" bundle:nil parentId:[document objectForKey:@"uid"]];
+        branch.title = [document objectForKey:@"title"];
         
         [self.navigationController pushViewController:branch animated:true];
         
@@ -211,7 +223,6 @@
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
     
     [alert show];
-    
     [alert release];
     
     [currentOperation release];
