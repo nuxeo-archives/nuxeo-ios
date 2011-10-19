@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NXAppDelegate.h"
+#import "NXOperation.h"
+#import "NXOperationResult.h"
+#import "NXOperationDefinition.h"
 
-@interface SearchDocumentController : UIViewController
+@interface SearchDocumentController : UITableViewController<UISearchBarDelegate, NXOperationDelegate> {
+@private
+    NXOperation* currentOperation;
+    NSArray* documentList;
+}
 
 @end
