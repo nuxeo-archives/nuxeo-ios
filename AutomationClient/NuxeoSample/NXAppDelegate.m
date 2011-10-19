@@ -28,8 +28,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //NSURL* serverURL = [NSURL URLWithString:@"http://starship.denise.in.nuxeo.com/nuxeo/site/automation/"]; //5.4.3
-    NSURL* serverURL = [NSURL URLWithString:@"http://cmis.demo.nuxeo.com/nuxeo/site/automation/"]; //5.4.2
+    NSURL* serverURL = [NSURL URLWithString:@"http://starship.denise.in.nuxeo.com/nuxeo/site/automation/"]; //5.4.3
+    //NSURL* serverURL = [NSURL URLWithString:@"http://cmis.demo.nuxeo.com/nuxeo/site/automation/"]; //5.4.2
     
     queue = [[NXOperationQueue alloc] initWithServerURL:serverURL];
     queue.delegate = self;
@@ -39,15 +39,20 @@
     UIViewController *documentTree = [[[DocumentTreeController alloc] initWithNibName:@"DocumentTreeController" bundle:nil] autorelease];
     UINavigationController *navigationTree = [[[UINavigationController alloc] initWithRootViewController:documentTree] autorelease];
     documentTree.title = @"Navigation";
+    navigationTree.tabBarItem.image = [UIImage imageNamed:@"navigate.png"];
     
     UIViewController *viewController2 = [[[SearchDocumentController alloc] initWithNibName:@"SearchDocumentController" bundle:nil] autorelease];
     UINavigationController *navigationSearch = [[[UINavigationController alloc] initWithRootViewController:viewController2] autorelease];
     navigationSearch.title = @"Search";
     
-    UIViewController *viewController3 = [[[WorkingListController alloc] initWithNibName:@"WorkingListController" bundle:nil] autorelease];
+    //UIViewController *viewController3 = [[[WorkingListController alloc] initWithNibName:@"WorkingListController" bundle:nil] autorelease];
+    
     UIViewController *viewController4 = [[[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil] autorelease];
+    viewController4.title = @"Settings";
+    viewController4.tabBarItem.image = [UIImage imageNamed:@"settings.png"];
+    
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:navigationTree, navigationSearch,viewController3, viewController4, nil];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:navigationTree, navigationSearch, viewController4, nil];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
