@@ -26,7 +26,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {    
-    NSURL* serverURL = [NSURL URLWithString:@"http://demo.denise.in.nuxeo.com/nuxeo/site/automation/"];
+    NSURL* serverURL = [NSURL URLWithString:@"http://cmis.demo.nuxeo.com/nuxeo/site/automation/"];
     
     queue = [[NXOperationQueue alloc] initWithServerURL:serverURL];
     queue.delegate = self;

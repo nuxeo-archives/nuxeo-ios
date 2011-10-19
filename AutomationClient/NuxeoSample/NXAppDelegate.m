@@ -9,7 +9,7 @@
 #import "NXAppDelegate.h"
 
 #import "DocumentTreeController.h"
-#import "SettingsController.h"
+#import "SettingsViewController.h"
 #import "WorkingListController.h"
 #import "SearchDocumentController.h"
 
@@ -32,7 +32,7 @@
     UIViewController *documentTree = [[[DocumentTreeController alloc] initWithNibName:@"DocumentTreeController" bundle:nil] autorelease];
     UIViewController *viewController2 = [[[SearchDocumentController alloc] initWithNibName:@"SearchDocumentController" bundle:nil] autorelease];
     UIViewController *viewController3 = [[[WorkingListController alloc] initWithNibName:@"WorkingListController" bundle:nil] autorelease];
-    UIViewController *viewController4 = [[[SettingsController alloc] initWithNibName:@"SettingsController" bundle:nil] autorelease];
+    UIViewController *viewController4 = [[[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil] autorelease];
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:documentTree, viewController2,viewController3, viewController4, nil];
     self.window.rootViewController = self.tabBarController;

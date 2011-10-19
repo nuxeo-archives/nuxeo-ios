@@ -39,7 +39,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSURL* serverURL = [NSURL URLWithString:@"http://demo.denise.in.nuxeo.com/nuxeo/site/automation/"];
+    NSURL* serverURL = [NSURL URLWithString:@"http://cmis.demo.nuxeo.com/nuxeo/site/automation/"];
     
     queue = [[NXOperationQueue alloc] initWithServerURL:serverURL];
     queue.delegate = self;

@@ -16,8 +16,6 @@
 		5130358C144DEC75009A35B0 /* libNuxeoAutomation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F43889A144DC02F006F4C97 /* libNuxeoAutomation.a */; };
 		51303595144DED78009A35B0 /* DocumentTreeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51303593144DED78009A35B0 /* DocumentTreeController.m */; };
 		51303596144DED78009A35B0 /* DocumentTreeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51303594144DED78009A35B0 /* DocumentTreeController.xib */; };
-		5130359A144DEE09009A35B0 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51303598144DEE09009A35B0 /* SettingsController.m */; };
-		5130359B144DEE09009A35B0 /* SettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51303599144DEE09009A35B0 /* SettingsController.xib */; };
 		5130359F144DEE4D009A35B0 /* SearchDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5130359D144DEE4D009A35B0 /* SearchDocumentController.m */; };
 		513035A0144DEE4D009A35B0 /* SearchDocumentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5130359E144DEE4D009A35B0 /* SearchDocumentController.xib */; };
 		513035A4144DEE69009A35B0 /* WorkingListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513035A2144DEE69009A35B0 /* WorkingListController.m */; };
@@ -59,6 +57,10 @@
 		5FC6E160144DCB8C001BAC79 /* NXMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC6E15E144DCB8C001BAC79 /* NXMasterViewController.xib */; };
 		5FC6E163144DCB8C001BAC79 /* NXDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC6E161144DCB8C001BAC79 /* NXDetailViewController.xib */; };
 		5FC6E169144DCBC1001BAC79 /* libNuxeoAutomation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F43889A144DC02F006F4C97 /* libNuxeoAutomation.a */; };
+		781C30C4144EA3A0001B5393 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781C30C1144EA3A0001B5393 /* SettingsViewController.xib */; };
+		781C30C5144EA3A0001B5393 /* SettingsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 781C30C2144EA3A0001B5393 /* SettingsViewController.h */; };
+		781C30C6144EA3A0001B5393 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781C30C3144EA3A0001B5393 /* SettingsViewController.m */; };
+		781C30C7144EA3A0001B5393 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781C30C3144EA3A0001B5393 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,9 +98,6 @@
 		51303592144DED78009A35B0 /* DocumentTreeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentTreeController.h; sourceTree = "<group>"; };
 		51303593144DED78009A35B0 /* DocumentTreeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentTreeController.m; sourceTree = "<group>"; };
 		51303594144DED78009A35B0 /* DocumentTreeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocumentTreeController.xib; sourceTree = "<group>"; };
-		51303597144DEE09009A35B0 /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
-		51303598144DEE09009A35B0 /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
-		51303599144DEE09009A35B0 /* SettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsController.xib; sourceTree = "<group>"; };
 		5130359C144DEE4D009A35B0 /* SearchDocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDocumentController.h; sourceTree = "<group>"; };
 		5130359D144DEE4D009A35B0 /* SearchDocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDocumentController.m; sourceTree = "<group>"; };
 		5130359E144DEE4D009A35B0 /* SearchDocumentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchDocumentController.xib; sourceTree = "<group>"; };
@@ -155,6 +154,9 @@
 		5FC6E15F144DCB8C001BAC79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NXMasterViewController.xib; sourceTree = "<group>"; };
 		5FC6E162144DCB8C001BAC79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NXDetailViewController.xib; sourceTree = "<group>"; };
 		5FCF2536144D72E300B10B96 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		781C30C1144EA3A0001B5393 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		781C30C2144EA3A0001B5393 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		781C30C3144EA3A0001B5393 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,9 +222,9 @@
 				51303592144DED78009A35B0 /* DocumentTreeController.h */,
 				51303593144DED78009A35B0 /* DocumentTreeController.m */,
 				51303594144DED78009A35B0 /* DocumentTreeController.xib */,
-				51303597144DEE09009A35B0 /* SettingsController.h */,
-				51303598144DEE09009A35B0 /* SettingsController.m */,
-				51303599144DEE09009A35B0 /* SettingsController.xib */,
+				781C30C2144EA3A0001B5393 /* SettingsViewController.h */,
+				781C30C3144EA3A0001B5393 /* SettingsViewController.m */,
+				781C30C1144EA3A0001B5393 /* SettingsViewController.xib */,
 				5130359C144DEE4D009A35B0 /* SearchDocumentController.h */,
 				5130359D144DEE4D009A35B0 /* SearchDocumentController.m */,
 				5130359E144DEE4D009A35B0 /* SearchDocumentController.xib */,
@@ -396,6 +398,7 @@
 				5F4388AE144DC3BE006F4C97 /* NXOperationQueue_Private.h in Headers */,
 				5F4388AF144DC3BE006F4C97 /* NXNuxeoErrors.h in Headers */,
 				5F4388B0144DC3BE006F4C97 /* NXNuxeoBase.h in Headers */,
+				781C30C5144EA3A0001B5393 /* SettingsViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,9 +531,9 @@
 			files = (
 				5130356B144DEB2A009A35B0 /* InfoPlist.strings in Resources */,
 				51303596144DED78009A35B0 /* DocumentTreeController.xib in Resources */,
-				5130359B144DEE09009A35B0 /* SettingsController.xib in Resources */,
 				513035A0144DEE4D009A35B0 /* SearchDocumentController.xib in Resources */,
 				513035A5144DEE69009A35B0 /* WorkingListController.xib in Resources */,
+				781C30C4144EA3A0001B5393 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,9 +590,9 @@
 				5130356D144DEB2A009A35B0 /* main.m in Sources */,
 				51303571144DEB2A009A35B0 /* NXAppDelegate.m in Sources */,
 				51303595144DED78009A35B0 /* DocumentTreeController.m in Sources */,
-				5130359A144DEE09009A35B0 /* SettingsController.m in Sources */,
 				5130359F144DEE4D009A35B0 /* SearchDocumentController.m in Sources */,
 				513035A4144DEE69009A35B0 /* WorkingListController.m in Sources */,
+				781C30C7144EA3A0001B5393 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +613,7 @@
 				5F4388A7144DC085006F4C97 /* NXOperationResult.m in Sources */,
 				5F4388A8144DC085006F4C97 /* NXOperationQueue.m in Sources */,
 				5F4388A9144DC085006F4C97 /* NXNuxeoErrors.m in Sources */,
+				781C30C6144EA3A0001B5393 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,6 +948,7 @@
 				51303587144DEB2B009A35B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F438882144D915B006F4C97 /* Build configuration list for PBXNativeTarget "AutomationTest" */ = {
 			isa = XCConfigurationList;
