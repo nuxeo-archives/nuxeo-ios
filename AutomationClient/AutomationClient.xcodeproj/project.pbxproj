@@ -20,6 +20,8 @@
 		513035A0144DEE4D009A35B0 /* SearchDocumentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5130359E144DEE4D009A35B0 /* SearchDocumentController.xib */; };
 		513035A4144DEE69009A35B0 /* WorkingListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513035A2144DEE69009A35B0 /* WorkingListController.m */; };
 		513035A5144DEE69009A35B0 /* WorkingListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513035A3144DEE69009A35B0 /* WorkingListController.xib */; };
+		51395B36144F268800E900E4 /* NXDocumentDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51395B34144F268500E900E4 /* NXDocumentDetailView.m */; };
+		51395B37144F268800E900E4 /* NXDocumentDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51395B35144F268600E900E4 /* NXDocumentDetailView.xib */; };
 		5F438871144D915B006F4C97 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F438870144D915B006F4C97 /* SenTestingKit.framework */; };
 		5F438873144D915B006F4C97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F438872144D915B006F4C97 /* Cocoa.framework */; };
 		5F43887D144D915B006F4C97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F43887B144D915B006F4C97 /* InfoPlist.strings */; };
@@ -116,6 +118,9 @@
 		513035A1144DEE68009A35B0 /* WorkingListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkingListController.h; sourceTree = "<group>"; };
 		513035A2144DEE69009A35B0 /* WorkingListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkingListController.m; sourceTree = "<group>"; };
 		513035A3144DEE69009A35B0 /* WorkingListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkingListController.xib; sourceTree = "<group>"; };
+		51395B33144F268400E900E4 /* NXDocumentDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXDocumentDetailView.h; sourceTree = "<group>"; };
+		51395B34144F268500E900E4 /* NXDocumentDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXDocumentDetailView.m; sourceTree = "<group>"; };
+		51395B35144F268600E900E4 /* NXDocumentDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXDocumentDetailView.xib; sourceTree = "<group>"; };
 		5F438823144D90C5006F4C97 /* NXOperationDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXOperationDefinition.h; sourceTree = "<group>"; };
 		5F438824144D90C5006F4C97 /* NXOperationDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXOperationDefinition.m; sourceTree = "<group>"; };
 		5F43886F144D915B006F4C97 /* AutomationTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutomationTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,6 +261,9 @@
 				513035A1144DEE68009A35B0 /* WorkingListController.h */,
 				513035A2144DEE69009A35B0 /* WorkingListController.m */,
 				513035A3144DEE69009A35B0 /* WorkingListController.xib */,
+				51395B33144F268400E900E4 /* NXDocumentDetailView.h */,
+				51395B34144F268500E900E4 /* NXDocumentDetailView.m */,
+				51395B35144F268600E900E4 /* NXDocumentDetailView.xib */,
 			);
 			path = NuxeoSample;
 			sourceTree = "<group>";
@@ -590,6 +598,7 @@
 				78C27641144F1B9B00EA3652 /* film.png in Resources */,
 				78C27642144F1B9B00EA3652 /* Default.png in Resources */,
 				78C27643144F1B9B00EA3652 /* camera.png in Resources */,
+				51395B37144F268800E900E4 /* NXDocumentDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +658,7 @@
 				5130359F144DEE4D009A35B0 /* SearchDocumentController.m in Sources */,
 				513035A4144DEE69009A35B0 /* WorkingListController.m in Sources */,
 				781C30C7144EA3A0001B5393 /* SettingsViewController.m in Sources */,
+				51395B36144F268800E900E4 /* NXDocumentDetailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

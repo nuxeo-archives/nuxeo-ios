@@ -127,7 +127,7 @@
         return;
     }
     NSLog(@"Using very strong user/password pair");
-    NSURLCredential* credential = [NSURLCredential credentialWithUser:@"Administrator" password:@"Administrator" persistence:NSURLCredentialPersistenceNone];
+    NSURLCredential* credential = [NSURLCredential credentialWithUser:@"Administrator" password:@"starship5" persistence:NSURLCredentialPersistenceNone];
     [[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
 }
 

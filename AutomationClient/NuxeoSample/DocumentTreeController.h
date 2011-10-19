@@ -11,6 +11,7 @@
 #import "NXOperation.h"
 #import "NXOperationDefinition.h"
 #import "NXOperationResult.h"
+#import "NXDocumentDetailView.h"
 
 @interface DocumentTreeController : UITableViewController<NXOperationDelegate> {
 @private

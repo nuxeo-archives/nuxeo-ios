@@ -212,7 +212,12 @@
         
         [branch release];
     } else {
-        // Display detail view
+        NXDocumentDetailView* detail = [[NXDocumentDetailView alloc] initWithNibName:@"NXDocumentDetailView" bundle:nil];
+        detail.document = document;
+        
+        [self.navigationController pushViewController:detail animated:true];
+        
+        [detail release];
     }
 }
 

@@ -7,6 +7,8 @@
 //
 
 #import "SearchDocumentController.h"
+#import "DocumentTreeController.h"
+#import "NXDocumentDetailView.h"
 
 const int DISPLAY_ELT = 0;
 
@@ -146,6 +148,11 @@ const int DISPLAY_ELT = 0;
         NSDictionary* document = [documentList objectAtIndex:indexPath.row];
         cell.textLabel.text = [document objectForKey:@"title"];
         cell.detailTextLabel.text = [document objectForKey:@"path"];
+        
+        NSArray* facets = [document objectForKey:@"facets"];
+        if ([facets containsObject:@"Folderish"]) {
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
     }
     
     return cell;
@@ -232,14 +239,23 @@ const int DISPLAY_ELT = 0;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    NSDictionary* document = [documentList objectAtIndex:indexPath.row];
+    NSArray* facets = [document objectForKey:@"facets"];
+    if ([facets containsObject:@"Folderish"]) {
+        DocumentTreeController* branch = [[DocumentTreeController alloc] initWithNibName:@"DocumentTreeController" bundle:nil parentId:[document objectForKey:@"uid"]];
+        branch.title = [document objectForKey:@"title"];
+        
+        [self.navigationController pushViewController:branch animated:true];
+        
+        [branch release];
+    } else {
+        NXDocumentDetailView* detail = [[NXDocumentDetailView alloc] initWithNibName:@"NXDocumentDetailView" bundle:nil];
+        detail.document = document;
+        
+        [self.navigationController pushViewController:detail animated:true];
+        
+        [detail release];
+    }
 }
 
 #pragma mark UISearchBarDelegate
