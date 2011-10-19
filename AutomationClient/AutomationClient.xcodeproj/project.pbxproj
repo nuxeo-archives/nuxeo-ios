@@ -61,18 +61,18 @@
 		781C30C5144EA3A0001B5393 /* SettingsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 781C30C2144EA3A0001B5393 /* SettingsViewController.h */; };
 		781C30C6144EA3A0001B5393 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781C30C3144EA3A0001B5393 /* SettingsViewController.m */; };
 		781C30C7144EA3A0001B5393 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781C30C3144EA3A0001B5393 /* SettingsViewController.m */; };
-		7846A28C144EF9CA00A68B70 /* timeline.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846A280144EF9CA00A68B70 /* timeline.png */; };
-		7846A28D144EF9CA00A68B70 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846A281144EF9CA00A68B70 /* settings.png */; };
-		7846A28E144EF9CA00A68B70 /* page_white_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846A282144EF9CA00A68B70 /* page_white_text.png */; };
-		7846A28F144EF9CA00A68B70 /* page_white_office.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846A283144EF9CA00A68B70 /* page_white_office.png */; };
-		7846A290144EF9CA00A68B70 /* page_white_acrobat.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846A284144EF9CA00A68B70 /* page_white_acrobat.png */; };
-		7846A291144EF9CA00A68B70 /* navigate.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846A285144EF9CA00A68B70 /* navigate.png */; };
-		7846A292144EF9CA00A68B70 /* iNuxeo-57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846A286144EF9CA00A68B70 /* iNuxeo-57x57.png */; };
-		7846A293144EF9CA00A68B70 /* html.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846A287144EF9CA00A68B70 /* html.png */; };
-		7846A294144EF9CA00A68B70 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846A288144EF9CA00A68B70 /* folder.png */; };
-		7846A295144EF9CA00A68B70 /* film.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846A289144EF9CA00A68B70 /* film.png */; };
-		7846A296144EF9CA00A68B70 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846A28A144EF9CA00A68B70 /* Default.png */; };
-		7846A297144EF9CA00A68B70 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846A28B144EF9CA00A68B70 /* camera.png */; };
+		78C27638144F1B9B00EA3652 /* timeline.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C2762C144F1B9B00EA3652 /* timeline.png */; };
+		78C27639144F1B9B00EA3652 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C2762D144F1B9B00EA3652 /* settings.png */; };
+		78C2763A144F1B9B00EA3652 /* page_white_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C2762E144F1B9B00EA3652 /* page_white_text.png */; };
+		78C2763B144F1B9B00EA3652 /* page_white_office.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C2762F144F1B9B00EA3652 /* page_white_office.png */; };
+		78C2763C144F1B9B00EA3652 /* page_white_acrobat.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C27630144F1B9B00EA3652 /* page_white_acrobat.png */; };
+		78C2763D144F1B9B00EA3652 /* navigate.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C27631144F1B9B00EA3652 /* navigate.png */; };
+		78C2763E144F1B9B00EA3652 /* iNuxeo-57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C27632144F1B9B00EA3652 /* iNuxeo-57x57.png */; };
+		78C2763F144F1B9B00EA3652 /* html.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C27633144F1B9B00EA3652 /* html.png */; };
+		78C27640144F1B9B00EA3652 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C27634144F1B9B00EA3652 /* folder.png */; };
+		78C27641144F1B9B00EA3652 /* film.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C27635144F1B9B00EA3652 /* film.png */; };
+		78C27642144F1B9B00EA3652 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C27636144F1B9B00EA3652 /* Default.png */; };
+		78C27643144F1B9B00EA3652 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C27637144F1B9B00EA3652 /* camera.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,18 +169,18 @@
 		781C30C1144EA3A0001B5393 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		781C30C2144EA3A0001B5393 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		781C30C3144EA3A0001B5393 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		7846A280144EF9CA00A68B70 /* timeline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timeline.png; path = "../../../nuxeo-mobile-iphone/images/timeline.png"; sourceTree = "<group>"; };
-		7846A281144EF9CA00A68B70 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = "../../../nuxeo-mobile-iphone/images/settings.png"; sourceTree = "<group>"; };
-		7846A282144EF9CA00A68B70 /* page_white_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = page_white_text.png; path = "../../../nuxeo-mobile-iphone/images/page_white_text.png"; sourceTree = "<group>"; };
-		7846A283144EF9CA00A68B70 /* page_white_office.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = page_white_office.png; path = "../../../nuxeo-mobile-iphone/images/page_white_office.png"; sourceTree = "<group>"; };
-		7846A284144EF9CA00A68B70 /* page_white_acrobat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = page_white_acrobat.png; path = "../../../nuxeo-mobile-iphone/images/page_white_acrobat.png"; sourceTree = "<group>"; };
-		7846A285144EF9CA00A68B70 /* navigate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navigate.png; path = "../../../nuxeo-mobile-iphone/images/navigate.png"; sourceTree = "<group>"; };
-		7846A286144EF9CA00A68B70 /* iNuxeo-57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iNuxeo-57x57.png"; path = "../../../nuxeo-mobile-iphone/images/iNuxeo-57x57.png"; sourceTree = "<group>"; };
-		7846A287144EF9CA00A68B70 /* html.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = html.png; path = "../../../nuxeo-mobile-iphone/images/html.png"; sourceTree = "<group>"; };
-		7846A288144EF9CA00A68B70 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = folder.png; path = "../../../nuxeo-mobile-iphone/images/folder.png"; sourceTree = "<group>"; };
-		7846A289144EF9CA00A68B70 /* film.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = film.png; path = "../../../nuxeo-mobile-iphone/images/film.png"; sourceTree = "<group>"; };
-		7846A28A144EF9CA00A68B70 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = "../../../nuxeo-mobile-iphone/images/Default.png"; sourceTree = "<group>"; };
-		7846A28B144EF9CA00A68B70 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = "../../../nuxeo-mobile-iphone/images/camera.png"; sourceTree = "<group>"; };
+		78C2762C144F1B9B00EA3652 /* timeline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timeline.png; path = images/timeline.png; sourceTree = "<group>"; };
+		78C2762D144F1B9B00EA3652 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = images/settings.png; sourceTree = "<group>"; };
+		78C2762E144F1B9B00EA3652 /* page_white_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = page_white_text.png; path = images/page_white_text.png; sourceTree = "<group>"; };
+		78C2762F144F1B9B00EA3652 /* page_white_office.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = page_white_office.png; path = images/page_white_office.png; sourceTree = "<group>"; };
+		78C27630144F1B9B00EA3652 /* page_white_acrobat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = page_white_acrobat.png; path = images/page_white_acrobat.png; sourceTree = "<group>"; };
+		78C27631144F1B9B00EA3652 /* navigate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navigate.png; path = images/navigate.png; sourceTree = "<group>"; };
+		78C27632144F1B9B00EA3652 /* iNuxeo-57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iNuxeo-57x57.png"; path = "images/iNuxeo-57x57.png"; sourceTree = "<group>"; };
+		78C27633144F1B9B00EA3652 /* html.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = html.png; path = images/html.png; sourceTree = "<group>"; };
+		78C27634144F1B9B00EA3652 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = folder.png; path = images/folder.png; sourceTree = "<group>"; };
+		78C27635144F1B9B00EA3652 /* film.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = film.png; path = images/film.png; sourceTree = "<group>"; };
+		78C27636144F1B9B00EA3652 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = images/Default.png; sourceTree = "<group>"; };
+		78C27637144F1B9B00EA3652 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = images/camera.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -412,18 +412,18 @@
 		7846A299144EF9D600A68B70 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				7846A280144EF9CA00A68B70 /* timeline.png */,
-				7846A281144EF9CA00A68B70 /* settings.png */,
-				7846A282144EF9CA00A68B70 /* page_white_text.png */,
-				7846A283144EF9CA00A68B70 /* page_white_office.png */,
-				7846A284144EF9CA00A68B70 /* page_white_acrobat.png */,
-				7846A285144EF9CA00A68B70 /* navigate.png */,
-				7846A286144EF9CA00A68B70 /* iNuxeo-57x57.png */,
-				7846A287144EF9CA00A68B70 /* html.png */,
-				7846A288144EF9CA00A68B70 /* folder.png */,
-				7846A289144EF9CA00A68B70 /* film.png */,
-				7846A28A144EF9CA00A68B70 /* Default.png */,
-				7846A28B144EF9CA00A68B70 /* camera.png */,
+				78C2762C144F1B9B00EA3652 /* timeline.png */,
+				78C2762D144F1B9B00EA3652 /* settings.png */,
+				78C2762E144F1B9B00EA3652 /* page_white_text.png */,
+				78C2762F144F1B9B00EA3652 /* page_white_office.png */,
+				78C27630144F1B9B00EA3652 /* page_white_acrobat.png */,
+				78C27631144F1B9B00EA3652 /* navigate.png */,
+				78C27632144F1B9B00EA3652 /* iNuxeo-57x57.png */,
+				78C27633144F1B9B00EA3652 /* html.png */,
+				78C27634144F1B9B00EA3652 /* folder.png */,
+				78C27635144F1B9B00EA3652 /* film.png */,
+				78C27636144F1B9B00EA3652 /* Default.png */,
+				78C27637144F1B9B00EA3652 /* camera.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -578,18 +578,18 @@
 				513035A0144DEE4D009A35B0 /* SearchDocumentController.xib in Resources */,
 				513035A5144DEE69009A35B0 /* WorkingListController.xib in Resources */,
 				781C30C4144EA3A0001B5393 /* SettingsViewController.xib in Resources */,
-				7846A28C144EF9CA00A68B70 /* timeline.png in Resources */,
-				7846A28D144EF9CA00A68B70 /* settings.png in Resources */,
-				7846A28E144EF9CA00A68B70 /* page_white_text.png in Resources */,
-				7846A28F144EF9CA00A68B70 /* page_white_office.png in Resources */,
-				7846A290144EF9CA00A68B70 /* page_white_acrobat.png in Resources */,
-				7846A291144EF9CA00A68B70 /* navigate.png in Resources */,
-				7846A292144EF9CA00A68B70 /* iNuxeo-57x57.png in Resources */,
-				7846A293144EF9CA00A68B70 /* html.png in Resources */,
-				7846A294144EF9CA00A68B70 /* folder.png in Resources */,
-				7846A295144EF9CA00A68B70 /* film.png in Resources */,
-				7846A296144EF9CA00A68B70 /* Default.png in Resources */,
-				7846A297144EF9CA00A68B70 /* camera.png in Resources */,
+				78C27638144F1B9B00EA3652 /* timeline.png in Resources */,
+				78C27639144F1B9B00EA3652 /* settings.png in Resources */,
+				78C2763A144F1B9B00EA3652 /* page_white_text.png in Resources */,
+				78C2763B144F1B9B00EA3652 /* page_white_office.png in Resources */,
+				78C2763C144F1B9B00EA3652 /* page_white_acrobat.png in Resources */,
+				78C2763D144F1B9B00EA3652 /* navigate.png in Resources */,
+				78C2763E144F1B9B00EA3652 /* iNuxeo-57x57.png in Resources */,
+				78C2763F144F1B9B00EA3652 /* html.png in Resources */,
+				78C27640144F1B9B00EA3652 /* folder.png in Resources */,
+				78C27641144F1B9B00EA3652 /* film.png in Resources */,
+				78C27642144F1B9B00EA3652 /* Default.png in Resources */,
+				78C27643144F1B9B00EA3652 /* camera.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
