@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NXAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
+#import "NXOperationQueue.h"
+
+@interface NXAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, NXOperationQueueDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) UITabBarController *tabBarController;
+
+@property (readonly) NXOperationQueue* queue;
 
 @end

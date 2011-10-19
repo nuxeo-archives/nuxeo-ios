@@ -17,6 +17,7 @@
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
+@synthesize queue;
 
 - (void)dealloc
 {
@@ -27,6 +28,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSURL* serverURL = [NSURL URLWithString:@"http://demo.denise.in.nuxeo.com/nuxeo/site/automation/"];
+    
+    queue = [[NXOperationQueue alloc] initWithServerURL:serverURL];
+    queue.delegate = self;
+    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     UIViewController *documentTree = [[[DocumentTreeController alloc] initWithNibName:@"DocumentTreeController" bundle:nil] autorelease];
@@ -92,5 +98,25 @@
 {
 }
 */
+
+#pragma mark -
+#pragma mark NXOperationQueueDelegate
+
+- (BOOL)queue:(NXOperationQueue *)queue canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace
+{
+    return YES;
+}
+
+- (void)queue:(NXOperationQueue *)queue didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+    if ([challenge previousFailureCount] >= 1) {
+        NSLog(@"Too many failures. Bailing out");
+        [[challenge sender] cancelAuthenticationChallenge:challenge];
+        return;
+    }
+    NSLog(@"Using very strong user/password pair");
+    NSURLCredential* credential = [NSURLCredential credentialWithUser:@"Administrator" password:@"Administrator" persistence:NSURLCredentialPersistenceNone];
+    [[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
+}
 
 @end
