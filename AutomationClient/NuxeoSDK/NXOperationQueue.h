@@ -37,7 +37,6 @@
 
 @optional
 
-- (BOOL)queue:(NXOperationQueue *)queue canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace;
-- (void)queue:(NXOperationQueue *)queue didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+- (void)queue:(NXOperationQueue *)queue willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 
 @end

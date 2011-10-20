@@ -28,7 +28,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSURL* serverURL = [NSURL URLWithString:@"http://starship.denise.in.nuxeo.com/nuxeo"]; //5.4.3
+    //NSURL* serverURL = [NSURL URLWithString:@"http://starship.denise.in.nuxeo.com/nuxeo"]; //5.4.3
+    NSURL* serverURL = [NSURL URLWithString:@"http://localhost:8080/nuxeo"]; //5.4.3
     //NSURL* serverURL = [NSURL URLWithString:@"http://cmis.demo.nuxeo.com/nuxeo/site/automation/"]; //5.4.2
     
     queue = [[NXOperationQueue alloc] initWithServerURL:serverURL];
@@ -114,21 +115,15 @@
 #pragma mark -
 #pragma mark NXOperationQueueDelegate
 
-- (BOOL)queue:(NXOperationQueue *)queue canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace
-{
-    return YES;
-}
-
-- (void)queue:(NXOperationQueue *)queue didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
-{
+- (void)queue:(NXOperationQueue *)queue willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
     if ([challenge previousFailureCount] >= 1) {
         NSLog(@"Too many failures. Bailing out");
         [[challenge sender] cancelAuthenticationChallenge:challenge];
         return;
     }
-    NSLog(@"Using very strong user/password pair");
-    NSURLCredential* credential = [NSURLCredential credentialWithUser:@"Administrator" password:@"starship5" persistence:NSURLCredentialPersistenceNone];
-    [[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
+    NSLog(@"Using very strong user/password pair without asking them");
+    NSURLCredential* credential = [NSURLCredential credentialWithUser:@"Administrator" password:@"Administrator" persistence:NSURLCredentialPersistenceNone];
+    [[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];    
 }
 
 @end

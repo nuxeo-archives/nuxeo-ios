@@ -231,21 +231,10 @@
 
 #pragma mark Authentication
 
-- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace
-{
-    if ([self.delegate respondsToSelector:@selector(queue:canAuthenticateAgainstProtectionSpace:)]) {
-        return [self.delegate queue:self canAuthenticateAgainstProtectionSpace:protectionSpace];
+- (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+    if ([self.delegate respondsToSelector:@selector(queue:willSendRequestForAuthenticationChallenge:)]) {
+        [self.delegate queue:self willSendRequestForAuthenticationChallenge:challenge];
     }
-    return NO;
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
-{
-    if ([self.delegate respondsToSelector:@selector(queue:didReceiveAuthenticationChallenge:)]) {
-        [self.delegate queue:self didReceiveAuthenticationChallenge:challenge];
-        return;
-    }
-    [challenge.sender cancelAuthenticationChallenge:challenge];
 }
 
 @end
