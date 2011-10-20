@@ -7,6 +7,7 @@
 //
 
 #import "NXOperationQueue.h"
+#define NX_AUTOMATION_URI @"/site/automation"
 
 @class NXOperationResult;
 

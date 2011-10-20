@@ -28,7 +28,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSURL* serverURL = [NSURL URLWithString:@"http://starship.denise.in.nuxeo.com/nuxeo/site/automation/"]; //5.4.3
+    NSURL* serverURL = [NSURL URLWithString:@"http://starship.denise.in.nuxeo.com/nuxeo"]; //5.4.3
     //NSURL* serverURL = [NSURL URLWithString:@"http://cmis.demo.nuxeo.com/nuxeo/site/automation/"]; //5.4.2
     
     queue = [[NXOperationQueue alloc] initWithServerURL:serverURL];
@@ -44,7 +44,7 @@
     UIViewController *viewController2 = [[[SearchDocumentController alloc] initWithNibName:@"SearchDocumentController" bundle:nil] autorelease];
     UINavigationController *navigationSearch = [[[UINavigationController alloc] initWithRootViewController:viewController2] autorelease];
     navigationSearch.title = @"Search";
-    
+
     //UIViewController *viewController3 = [[[WorkingListController alloc] initWithNibName:@"WorkingListController" bundle:nil] autorelease];
     
     UIViewController *viewController4 = [[[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil] autorelease];

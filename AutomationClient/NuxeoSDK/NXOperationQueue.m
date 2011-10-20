@@ -19,10 +19,10 @@
 
 @implementation NXOperationQueue
 
-+ (NSURLRequest *)requestForOperation:(NXOperation *)operation forServerURL:(NSURL *)serverURL error:(NSError **)error
++ (NSURLRequest *)requestForOperation:(NXOperation *)operation forServerURL:(NSURL *)baseURL error:(NSError **)error
 {
     // TODO: check all objects are valid, including definition
-    NSURL* realURL = [serverURL URLByAppendingPathComponent:operation.definition.URI];
+    NSURL* realURL = [[baseURL URLByAppendingPathComponent:NX_AUTOMATION_URI] URLByAppendingPathComponent:operation.definition.URI];
     NSMutableURLRequest* result = [[NSMutableURLRequest alloc] initWithURL:realURL cachePolicy:0 timeoutInterval:60.0f];
     [result setHTTPMethod:@"POST"];
     [result setValue:@"application/json+nxrequest" forHTTPHeaderField:@"Content-Type"];
@@ -95,13 +95,13 @@
     return nil;
 }
 
-@synthesize serverURL=_serverURL, delegate;
+@synthesize baseURL = _baseURL, delegate;
 
 - (id)initWithServerURL:(NSURL *)anURL
 {
     self = [super init];
     if (self) {
-        _serverURL = [anURL copy];
+        _baseURL = [anURL copy];
         _connectionToOperation = CFDictionaryCreateMutable(NULL, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
         _operationToConnection = CFDictionaryCreateMutable(NULL, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
         _connectionToData = CFDictionaryCreateMutable(NULL, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
@@ -110,7 +110,7 @@
 }
 
 - (void)dealloc {
-    [_serverURL release];
+    [_baseURL release];
     CFRelease(_connectionToOperation);
     CFRelease(_connectionToData);
     CFRelease(_operationToConnection);
@@ -129,7 +129,7 @@
     }
     
     NSError* error;
-    NSURLRequest* request = [[self class] requestForOperation:operation forServerURL:_serverURL error:&error];
+    NSURLRequest* request = [[self class] requestForOperation:operation forServerURL:_baseURL error:&error];
     if (!request) {
         NSLog(@"Can't create request for operation: %@", error);
         return;

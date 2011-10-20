@@ -16,7 +16,7 @@
 @interface NXOperationQueue : NSObject
 {
 @private
-    NSURL* _serverURL;
+    NSURL* _baseURL;
     CFMutableDictionaryRef _connectionToOperation;
     CFMutableDictionaryRef _operationToConnection;
     CFMutableDictionaryRef _connectionToData;
@@ -24,7 +24,7 @@
 
 - (id)initWithServerURL:(NSURL *)anURL;
 
-@property (readonly) NSURL* serverURL;
+@property (readonly) NSURL* baseURL;
 
 @property (assign) id <NXOperationQueueDelegate> delegate;
 
