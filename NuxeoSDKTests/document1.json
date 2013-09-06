@@ -1,0 +1,24 @@
+{
+    "entity-type": "document",
+    "repository": "default",
+    "uid": "37b1502b-26ff-430f-9f20-4bd0d803191e",
+    "path": "/default-domain",
+    "type": "Domain",
+    "state": "project",
+    "versionLabel": "",
+    "title": "Default domain",
+    "lastModified": "2013-07-20T05:58:58.98Z",
+    "facets": [
+               "SuperSpace",
+               "Folderish"
+               ],
+    "changeToken": "1374299938988",
+    "contextParameters": {
+        "documentURL": "/nuxeo/site/api/id/afb373f1-08ed-4228-bfe8-9f93131f8c84"
+    },
+    "properties": {
+        "common:icon": "/icons/domain.gif",
+        "common:icon-expanded": null,
+        "common:size": null
+    }
+}

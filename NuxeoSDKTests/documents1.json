@@ -1,0 +1,30 @@
+{
+    "entity-type": "documents",
+    "entries": [
+                {
+                "contextParameters": {
+                "documentURL": "/nuxeo/site/api/id/afb373f1-08ed-4228-bfe8-9f93131f8c84"
+                },
+                "entity-type": "document",
+                "path": "/default-domain/sections",
+                "repository": "default",
+                "type": "SectionRoot",
+                "uid": "afb373f1-08ed-4228-bfe8-9f93131f8c84"
+                },
+                {
+                "contextParameters": {
+                "documentURL": "/nuxeo/site/api/id/afb373f1-08ed-4228-bfe8-9f93131f8c84"
+                },
+                "entity-type": "document",
+                "path": "/default-domain/workspaces",
+                "repository": "default",
+                "type": "WorkspaceRoot",
+                "uid": "bfb373f1-08ed-4228-bfe8-9f93131f8c84"
+                }
+                ],
+    "isPaginable": true,
+    "pageCount": 1,
+    "pageIndex": 0,
+    "pageSize": 50,
+    "totalSize": 3
+}
