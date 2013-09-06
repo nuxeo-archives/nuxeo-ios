@@ -1,0 +1,21 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
+
+// Make RestKit globally available
+#import <RestKit/RestKit.h>
+// XXX Preprocessing to add it only on test
+#import <RestKit/Testing.h>
+
+// Adaptors
+#import "NXObjectMapping.h"
+#import "NXDocument.h"
+#import "NXDocuments.h"

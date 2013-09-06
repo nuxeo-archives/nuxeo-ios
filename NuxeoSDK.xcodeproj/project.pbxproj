@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		197555B250294DE4B43623E7 /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C830C088DC9D4CDAA9F16A29 /* libPods-test.a */; };
+		516D56E817D791D700436631 /* NXDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 516D56E617D791D700436631 /* NXDocument.h */; };
+		516D56E917D791D700436631 /* NXDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 516D56E717D791D700436631 /* NXDocument.m */; };
+		516D56EC17D79C2300436631 /* document1.json in Resources */ = {isa = PBXBuildFile; fileRef = 516D56EB17D79C2300436631 /* document1.json */; };
+		5175085F17D7898D00457033 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5175085E17D7898D00457033 /* Cocoa.framework */; };
+		5175086917D7898D00457033 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5175086717D7898D00457033 /* InfoPlist.strings */; };
+		5175086D17D7898D00457033 /* NuxeoSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 5175086C17D7898D00457033 /* NuxeoSDK.m */; };
+		5175087417D7898D00457033 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5175087317D7898D00457033 /* XCTest.framework */; };
+		5175087517D7898D00457033 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5175085E17D7898D00457033 /* Cocoa.framework */; };
+		5175087817D7898D00457033 /* NuxeoSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5175085B17D7898D00457033 /* NuxeoSDK.framework */; };
+		5175087E17D7898D00457033 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5175087C17D7898D00457033 /* InfoPlist.strings */; };
+		5175088017D7898D00457033 /* NuxeoSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5175087F17D7898D00457033 /* NuxeoSDKTests.m */; };
+		51FAF83817D8BB000064EF3A /* documents1.json in Resources */ = {isa = PBXBuildFile; fileRef = 51FAF83717D8BB000064EF3A /* documents1.json */; };
+		51FAF83B17D8BC770064EF3A /* NXDocuments.h in Headers */ = {isa = PBXBuildFile; fileRef = 51FAF83917D8BC770064EF3A /* NXDocuments.h */; };
+		51FAF83C17D8BC770064EF3A /* NXDocuments.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAF83A17D8BC770064EF3A /* NXDocuments.m */; };
+		51FAF83F17D8DF230064EF3A /* NXObjectMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 51FAF83D17D8DF230064EF3A /* NXObjectMapping.h */; };
+		51FAF84017D8DF230064EF3A /* NXObjectMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FAF83E17D8DF230064EF3A /* NXObjectMapping.m */; };
+		BD1129BF96FE41848527DE1F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26EFCFBDC17F44E68AE898B7 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5175087617D7898D00457033 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5175085217D7898D00457033 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5175085A17D7898D00457033;
+			remoteInfo = NuxeoSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		26EFCFBDC17F44E68AE898B7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		516D56E617D791D700436631 /* NXDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXDocument.h; sourceTree = "<group>"; };
+		516D56E717D791D700436631 /* NXDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXDocument.m; sourceTree = "<group>"; };
+		516D56EB17D79C2300436631 /* document1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = document1.json; sourceTree = "<group>"; };
+		5175085B17D7898D00457033 /* NuxeoSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NuxeoSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5175085E17D7898D00457033 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		5175086117D7898D00457033 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5175086217D7898D00457033 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5175086317D7898D00457033 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		5175086617D7898D00457033 /* NuxeoSDK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NuxeoSDK-Info.plist"; sourceTree = "<group>"; };
+		5175086817D7898D00457033 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5175086A17D7898D00457033 /* NuxeoSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NuxeoSDK-Prefix.pch"; sourceTree = "<group>"; };
+		5175086B17D7898D00457033 /* NuxeoSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NuxeoSDK.h; sourceTree = "<group>"; };
+		5175086C17D7898D00457033 /* NuxeoSDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NuxeoSDK.m; sourceTree = "<group>"; };
+		5175087217D7898D00457033 /* NuxeoSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NuxeoSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5175087317D7898D00457033 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5175087B17D7898D00457033 /* NuxeoSDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NuxeoSDKTests-Info.plist"; sourceTree = "<group>"; };
+		5175087D17D7898D00457033 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5175087F17D7898D00457033 /* NuxeoSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NuxeoSDKTests.m; sourceTree = "<group>"; };
+		51FAF83717D8BB000064EF3A /* documents1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = documents1.json; sourceTree = "<group>"; };
+		51FAF83917D8BC770064EF3A /* NXDocuments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXDocuments.h; sourceTree = "<group>"; };
+		51FAF83A17D8BC770064EF3A /* NXDocuments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXDocuments.m; sourceTree = "<group>"; };
+		51FAF83D17D8DF230064EF3A /* NXObjectMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXObjectMapping.h; sourceTree = "<group>"; };
+		51FAF83E17D8DF230064EF3A /* NXObjectMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXObjectMapping.m; sourceTree = "<group>"; };
+		72ABC6E1071C4EC3A4FD80CA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		C830C088DC9D4CDAA9F16A29 /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D300038E6118409F9805193A /* Pods-test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.xcconfig"; path = "Pods/Pods-test.xcconfig"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5175085717D7898D00457033 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5175085F17D7898D00457033 /* Cocoa.framework in Frameworks */,
+				BD1129BF96FE41848527DE1F /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5175086F17D7898D00457033 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5175087817D7898D00457033 /* NuxeoSDK.framework in Frameworks */,
+				5175087517D7898D00457033 /* Cocoa.framework in Frameworks */,
+				5175087417D7898D00457033 /* XCTest.framework in Frameworks */,
+				197555B250294DE4B43623E7 /* libPods-test.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		516D56E117D7908A00436631 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				516D56E617D791D700436631 /* NXDocument.h */,
+				516D56E717D791D700436631 /* NXDocument.m */,
+				51FAF83917D8BC770064EF3A /* NXDocuments.h */,
+				51FAF83A17D8BC770064EF3A /* NXDocuments.m */,
+				51FAF83D17D8DF230064EF3A /* NXObjectMapping.h */,
+				51FAF83E17D8DF230064EF3A /* NXObjectMapping.m */,
+			);
+			name = Adapters;
+			sourceTree = "<group>";
+		};
+		516D56EA17D79BF400436631 /* Resources Files */ = {
+			isa = PBXGroup;
+			children = (
+				516D56EB17D79C2300436631 /* document1.json */,
+				51FAF83717D8BB000064EF3A /* documents1.json */,
+			);
+			name = "Resources Files";
+			sourceTree = "<group>";
+		};
+		5175085117D7898D00457033 = {
+			isa = PBXGroup;
+			children = (
+				5175086417D7898D00457033 /* NuxeoSDK */,
+				5175087917D7898D00457033 /* NuxeoSDKTests */,
+				5175085D17D7898D00457033 /* Frameworks */,
+				5175085C17D7898D00457033 /* Products */,
+				72ABC6E1071C4EC3A4FD80CA /* Pods.xcconfig */,
+				D300038E6118409F9805193A /* Pods-test.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		5175085C17D7898D00457033 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5175085B17D7898D00457033 /* NuxeoSDK.framework */,
+				5175087217D7898D00457033 /* NuxeoSDKTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5175085D17D7898D00457033 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5175085E17D7898D00457033 /* Cocoa.framework */,
+				5175087317D7898D00457033 /* XCTest.framework */,
+				5175086017D7898D00457033 /* Other Frameworks */,
+				26EFCFBDC17F44E68AE898B7 /* libPods.a */,
+				C830C088DC9D4CDAA9F16A29 /* libPods-test.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5175086017D7898D00457033 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5175086117D7898D00457033 /* Foundation.framework */,
+				5175086217D7898D00457033 /* CoreData.framework */,
+				5175086317D7898D00457033 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		5175086417D7898D00457033 /* NuxeoSDK */ = {
+			isa = PBXGroup;
+			children = (
+				516D56E117D7908A00436631 /* Adapters */,
+				5175086B17D7898D00457033 /* NuxeoSDK.h */,
+				5175086C17D7898D00457033 /* NuxeoSDK.m */,
+				5175086517D7898D00457033 /* Supporting Files */,
+			);
+			path = NuxeoSDK;
+			sourceTree = "<group>";
+		};
+		5175086517D7898D00457033 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5175086617D7898D00457033 /* NuxeoSDK-Info.plist */,
+				5175086717D7898D00457033 /* InfoPlist.strings */,
+				5175086A17D7898D00457033 /* NuxeoSDK-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5175087917D7898D00457033 /* NuxeoSDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				516D56EA17D79BF400436631 /* Resources Files */,
+				5175087F17D7898D00457033 /* NuxeoSDKTests.m */,
+				5175087A17D7898D00457033 /* Supporting Files */,
+			);
+			path = NuxeoSDKTests;
+			sourceTree = "<group>";
+		};
+		5175087A17D7898D00457033 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5175087B17D7898D00457033 /* NuxeoSDKTests-Info.plist */,
+				5175087C17D7898D00457033 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5175085817D7898D00457033 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51FAF83F17D8DF230064EF3A /* NXObjectMapping.h in Headers */,
+				516D56E817D791D700436631 /* NXDocument.h in Headers */,
+				51FAF83B17D8BC770064EF3A /* NXDocuments.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5175085A17D7898D00457033 /* NuxeoSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5175088317D7898D00457033 /* Build configuration list for PBXNativeTarget "NuxeoSDK" */;
+			buildPhases = (
+				2764906AAE814147B8FA9AEF /* Check Pods Manifest.lock */,
+				5175085617D7898D00457033 /* Sources */,
+				5175085717D7898D00457033 /* Frameworks */,
+				5175085817D7898D00457033 /* Headers */,
+				5175085917D7898D00457033 /* Resources */,
+				0321DE5B36E744F9AE8C0A31 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NuxeoSDK;
+			productName = NuxeoSDK;
+			productReference = 5175085B17D7898D00457033 /* NuxeoSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5175087117D7898D00457033 /* NuxeoSDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5175088617D7898D00457033 /* Build configuration list for PBXNativeTarget "NuxeoSDKTests" */;
+			buildPhases = (
+				4A9756057A744F258BE25AEC /* Check Pods Manifest.lock */,
+				5175086E17D7898D00457033 /* Sources */,
+				5175086F17D7898D00457033 /* Frameworks */,
+				5175087017D7898D00457033 /* Resources */,
+				FB724BED6DBC491C80D36911 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5175087717D7898D00457033 /* PBXTargetDependency */,
+			);
+			name = NuxeoSDKTests;
+			productName = NuxeoSDKTests;
+			productReference = 5175087217D7898D00457033 /* NuxeoSDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5175085217D7898D00457033 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Nuxeo;
+				TargetAttributes = {
+					5175087117D7898D00457033 = {
+						TestTargetID = 5175085A17D7898D00457033;
+					};
+				};
+			};
+			buildConfigurationList = 5175085517D7898D00457033 /* Build configuration list for PBXProject "NuxeoSDK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5175085117D7898D00457033;
+			productRefGroup = 5175085C17D7898D00457033 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5175085A17D7898D00457033 /* NuxeoSDK */,
+				5175087117D7898D00457033 /* NuxeoSDKTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5175085917D7898D00457033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5175086917D7898D00457033 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5175087017D7898D00457033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				516D56EC17D79C2300436631 /* document1.json in Resources */,
+				5175087E17D7898D00457033 /* InfoPlist.strings in Resources */,
+				51FAF83817D8BB000064EF3A /* documents1.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0321DE5B36E744F9AE8C0A31 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2764906AAE814147B8FA9AEF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4A9756057A744F258BE25AEC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FB724BED6DBC491C80D36911 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-test-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5175085617D7898D00457033 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				516D56E917D791D700436631 /* NXDocument.m in Sources */,
+				51FAF84017D8DF230064EF3A /* NXObjectMapping.m in Sources */,
+				5175086D17D7898D00457033 /* NuxeoSDK.m in Sources */,
+				51FAF83C17D8BC770064EF3A /* NXDocuments.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5175086E17D7898D00457033 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5175088017D7898D00457033 /* NuxeoSDKTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5175087717D7898D00457033 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5175085A17D7898D00457033 /* NuxeoSDK */;
+			targetProxy = 5175087617D7898D00457033 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5175086717D7898D00457033 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5175086817D7898D00457033 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5175087C17D7898D00457033 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5175087D17D7898D00457033 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5175088117D7898D00457033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		5175088217D7898D00457033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5175088417D7898D00457033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72ABC6E1071C4EC3A4FD80CA /* Pods.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NuxeoSDK/NuxeoSDK-Prefix.pch";
+				INFOPLIST_FILE = "NuxeoSDK/NuxeoSDK-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		5175088517D7898D00457033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72ABC6E1071C4EC3A4FD80CA /* Pods.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NuxeoSDK/NuxeoSDK-Prefix.pch";
+				INFOPLIST_FILE = "NuxeoSDK/NuxeoSDK-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		5175088717D7898D00457033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D300038E6118409F9805193A /* Pods-test.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NuxeoSDK.framework/Versions/A/NuxeoSDK";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NuxeoSDK/NuxeoSDK-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NuxeoSDKTests/NuxeoSDKTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5175088817D7898D00457033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D300038E6118409F9805193A /* Pods-test.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NuxeoSDK.framework/Versions/A/NuxeoSDK";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NuxeoSDK/NuxeoSDK-Prefix.pch";
+				INFOPLIST_FILE = "NuxeoSDKTests/NuxeoSDKTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5175085517D7898D00457033 /* Build configuration list for PBXProject "NuxeoSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5175088117D7898D00457033 /* Debug */,
+				5175088217D7898D00457033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5175088317D7898D00457033 /* Build configuration list for PBXNativeTarget "NuxeoSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5175088417D7898D00457033 /* Debug */,
+				5175088517D7898D00457033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5175088617D7898D00457033 /* Build configuration list for PBXNativeTarget "NuxeoSDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5175088717D7898D00457033 /* Debug */,
+				5175088817D7898D00457033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5175085217D7898D00457033 /* Project object */;
+}
