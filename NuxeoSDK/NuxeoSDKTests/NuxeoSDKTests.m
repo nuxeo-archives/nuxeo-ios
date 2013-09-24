@@ -203,7 +203,7 @@
     [manager removeRequestDescriptor:requestDescriptor];
     
     // Ensure doc response had the corresponding title
-    XCTAssertEqual(NSOrderedAscending, [lastModif compare:doc.lastModified]);
+    XCTAssertEqual(-1L, [lastModif compare:doc.lastModified]);
     XCTAssertEqualObjects(docId, doc.uid);
     XCTAssertEqualObjects(newTitle, doc.title);
     XCTAssertEqualObjects(newTitle, doc.properties[@"dc:description"]);
