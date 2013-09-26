@@ -55,7 +55,7 @@
     [manager.HTTPClient setDefaultHeader:@"X-NXDocumentProperties" value:@"*"];
     [manager setRequestSerializationMIMEType:RKMIMETypeJSON];
     
-    RKResponseDescriptor *response = [RKResponseDescriptor responseDescriptorWithMapping:[[self class] dynamicMapping] method:RKRequestMethodAny pathPattern:nil keyPath:nil statusCodes:nil];
+    RKResponseDescriptor *response = [RKResponseDescriptor responseDescriptorWithMapping:[[self class] dynamicMapping] method:RKRequestMethodAny pathPattern:Nil keyPath:Nil statusCodes:Nil];
     [manager addResponseDescriptor:response];
     
     return manager;
@@ -69,6 +69,22 @@
     return map;
 }
 
++(NXDocument *) createDocument: (NXDocument *)document inParent: (NSString *)path {
+    RKObjectManager *manager = [[self class] nxManager];
+    
+    RKObjectMapping *truc = [RKObjectMapping requestMapping];
+    [truc addAttributeMappingsFromDictionary:[NXDocument mapping]];
+    
+    RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:[truc inverseMapping] objectClass:[NXDocument class] rootKeyPath:Nil method:RKRequestMethodPOST];
+    [manager addRequestDescriptor:requestDescriptor];
+    
+    RKObjectRequestOperation *request = [manager appropriateObjectRequestOperationWithObject:document method:RKRequestMethodPOST path:[NSString stringWithFormat:@"path/%@", path] parameters:Nil];
+    [request start];
+    [request waitUntilFinished];
+
+    return request.targetObject;
+}
+
 #pragma mark -
 #pragma mark Test cases
 
@@ -80,7 +96,7 @@
 
     RKMappingTest *test = [RKMappingTest testForMapping:[[self class] documentMapping] sourceObject:docJSON destinationObject:doc];
     
-    XCTAssertTrue([test evaluateExpectation:[RKPropertyMappingTestExpectation expectationWithSourceKeyPath:@"repository" destinationKeyPath:@"repository" value:@"default"] error:nil]);
+    XCTAssertTrue([test evaluateExpectation:[RKPropertyMappingTestExpectation expectationWithSourceKeyPath:@"repository" destinationKeyPath:@"repository" value:@"default"] error:Nil]);
     
     [test performMapping];
 
@@ -135,7 +151,7 @@
     RKObjectManager *manager = [[self class] nxManager];
 
     NXDocument *doc = [[NXDocument alloc] init];
-    RKObjectRequestOperation *requestOperation = [manager appropriateObjectRequestOperationWithObject:doc method:RKRequestMethodGET path:@"id/e5bac126-a7d6-4dc8-b29a-a3b771b0c8a4" parameters:nil];
+    RKObjectRequestOperation *requestOperation = [manager appropriateObjectRequestOperationWithObject:doc method:RKRequestMethodGET path:@"path/default-domain" parameters:Nil];
     [requestOperation start];
     [requestOperation waitUntilFinished];
     
@@ -143,9 +159,9 @@
     
     XCTAssertNotNil(doc);
     XCTAssertEqualObjects(@"document", doc.entityType);
-    XCTAssertEqualObjects(@"workspace", doc.title);
+    XCTAssertEqualObjects(@"Default domain", doc.title);
     XCTAssertEqualObjects(@"project", doc.state);
-    XCTAssertEqualObjects(@"e5bac126-a7d6-4dc8-b29a-a3b771b0c8a4", doc.uid);
+    XCTAssertEqualObjects(@"/default-domain", doc.path);
     XCTAssertTrue(doc.properties.count > 0);
 }
 
@@ -154,31 +170,30 @@
     RKObjectManager *manager = [[self class] nxManager];
     
     NXDocuments *docs = [[NXDocuments alloc] init];
-    RKObjectRequestOperation *request = [manager appropriateObjectRequestOperationWithObject:docs method:RKRequestMethodGET path:@"id/9237935f-14f2-4f92-ab42-9caf3d2a794f/@children" parameters:nil];
+    RKObjectRequestOperation *request = [manager appropriateObjectRequestOperationWithObject:docs method:RKRequestMethodGET path:@"path/@children" parameters:Nil];
     [request start];
     [request waitUntilFinished];
     
     XCTAssertNotNil(docs);
     XCTAssertEqualObjects(@"documents", docs.entityType);
-    XCTAssertTrue(docs.entries.count >= 3);
+    NSLog(@"-- %lu", (unsigned long)docs.entries.count);
+    XCTAssertTrue(docs.entries.count >= 1);
     NXDocument *doc = docs.entries[0];
-    XCTAssertEqualObjects(@"Sections", doc.title);
+    XCTAssertEqualObjects(@"Default domain", doc.title);
 }
 
 -(void) testDocumentUpdate
 {
     RKObjectManager *manager = [[self class] nxManager];
     NXDocument *doc = [NXDocument new];
-    NSString *docId = @"f08e8896-ce65-4664-90f5-3f2892290b15";
-    NSString *docIdPath = [NSString stringWithFormat:@"id/%@", docId];
- 
-    // Get a test Document
-    RKObjectRequestOperation *request = [manager appropriateObjectRequestOperationWithObject:doc method:RKRequestMethodGET path:docIdPath parameters:nil];
-    [request start];
-    [request waitUntilFinished];
+    doc.type = @"File";
+    doc.title = @"My Document";
+
+    doc = [[NuxeoSDKTests class] createDocument:doc inParent:@"default-domain"];
+    XCTAssertNotNil(doc.uid);
     
-    XCTAssertEqualObjects(docId, doc.uid);
-    doc.path = nil;
+    NSString *docId = doc.uid;
+    NSString *docIdPath = [NSString stringWithFormat:@"id/%@", docId];
     
     // Update his property
     NSString *newTitle = [NSString stringWithFormat:@"%d", arc4random()];
@@ -192,10 +207,10 @@
     RKObjectMapping *mapping = [RKObjectMapping requestMapping];
     [mapping addAttributeMappingsFromDictionary:[NXDocument mapping]];
     
-    RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:[mapping inverseMapping] objectClass:[NXDocument class] rootKeyPath:nil method:RKRequestMethodPUT];
+    RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:[mapping inverseMapping] objectClass:[NXDocument class] rootKeyPath:Nil method:RKRequestMethodPUT];
     [manager addRequestDescriptor:requestDescriptor];
     
-    request = [manager appropriateObjectRequestOperationWithObject:doc method:RKRequestMethodPUT path:docIdPath parameters:nil];
+    RKObjectRequestOperation *request = [manager appropriateObjectRequestOperationWithObject:doc method:RKRequestMethodPUT path:docIdPath parameters:Nil];
 
     [request start];
     [request waitUntilFinished];
@@ -203,14 +218,13 @@
     [manager removeRequestDescriptor:requestDescriptor];
     
     // Ensure doc response had the corresponding title
-    XCTAssertEqual(-1L, [lastModif compare:doc.lastModified]);
     XCTAssertEqualObjects(docId, doc.uid);
     XCTAssertEqualObjects(newTitle, doc.title);
     XCTAssertEqualObjects(newTitle, doc.properties[@"dc:description"]);
     
     // Ensure while fetching the doc from scratch; the title is what we expect.
     doc = [NXDocument new];
-    request = [manager appropriateObjectRequestOperationWithObject:doc method:RKRequestMethodGET path:docIdPath parameters:nil];
+    request = [manager appropriateObjectRequestOperationWithObject:doc method:RKRequestMethodGET path:docIdPath parameters:Nil];
     [request start];
     [request waitUntilFinished];
     
@@ -225,7 +239,7 @@
     RKObjectMapping *truc = [RKObjectMapping requestMapping];
     [truc addAttributeMappingsFromDictionary:[NXDocument mapping]];
     
-    RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:[truc inverseMapping] objectClass:[NXDocument class] rootKeyPath:nil method:RKRequestMethodPOST];
+    RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:[truc inverseMapping] objectClass:[NXDocument class] rootKeyPath:Nil method:RKRequestMethodPOST];
     [manager addRequestDescriptor:requestDescriptor];
     
     NXDocument *doc = [[NXDocument alloc] init];
@@ -237,13 +251,14 @@
     
     XCTAssertNil(doc.uid);
     
-    RKObjectRequestOperation *request = [manager appropriateObjectRequestOperationWithObject:doc method:RKRequestMethodPOST path:@"id/e5bac126-a7d6-4dc8-b29a-a3b771b0c8a4" parameters:nil];
+    RKObjectRequestOperation *request = [manager appropriateObjectRequestOperationWithObject:doc method:RKRequestMethodPOST path:@"path/default-domain" parameters:Nil];
     [request start];
     [request waitUntilFinished];
 
     XCTAssertNotNil(doc);
     XCTAssertNotNil(doc.uid);
     XCTAssertEqualObjects(@"document", doc.entityType);
+    XCTAssertEqualObjects(@"MyDoc title", doc.title);
 }
 
 @end
