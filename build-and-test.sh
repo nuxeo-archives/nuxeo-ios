@@ -22,6 +22,6 @@ start_server $HERE/tomcat 127.0.0.1
 # Prepare CocoaPod workspace
 ./prepare-pod.sh
 
-XCODEBUILD -workspace NuxeoSDK/NuxeoSDK.xcworkspace -scheme NuxeoSDK clean test
+XCODEBUILD -configuration Debug -workspace NuxeoSDK/NuxeoSDK.xcworkspace -scheme NuxeoSDK clean test
 
 stop_server
