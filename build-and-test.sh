@@ -5,7 +5,7 @@ NX_INT=$HERE/download/nuxeo-integration
 XCODEBUILD=${XCODEBUILD:-xcodebuild}
 
 # Cleaning
-rm -rf download tomcat || exit 1
+rm -rf download nuxeo tomcat || exit 1
 
 # Cloning integration-release
 git clone https://github.com/nuxeo/integration-scripts $NX_INT
@@ -22,6 +22,7 @@ start_server $HERE/tomcat 127.0.0.1
 # Prepare CocoaPod workspace
 ./prepare-pod.sh
 
-XCODEBUILD -configuration Debug -workspace NuxeoSDK/NuxeoSDK.xcworkspace -scheme NuxeoSDK clean test
+echo "Build: `type $XCODEBUILD`"
+$XCODEBUILD -verbose -configuration Debug -workspace NuxeoSDK/NuxeoSDK.xcworkspace -scheme NuxeoSDK clean test
 
 stop_server
