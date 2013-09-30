@@ -23,7 +23,9 @@ start_server $HERE/tomcat 127.0.0.1
 ./prepare-pod.sh
 
 echo "Build: `type $XCODEBUILD`"
-env
-$XCODEBUILD -verbose -configuration Debug -workspace NuxeoSDK/NuxeoSDK.xcworkspace -scheme NuxeoSDK clean test
+$XCODEBUILD -configuration Debug -workspace NuxeoSDK/NuxeoSDK.xcworkspace -scheme NuxeoSDK clean test
+EXIT_CODE=$?
 
 stop_server
+
+exit $EXIT_CODE
