@@ -14,7 +14,7 @@
                ],
     "changeToken": "1374299938988",
     "contextParameters": {
-        "documentURL": "/nuxeo/site/api/id/afb373f1-08ed-4228-bfe8-9f93131f8c84"
+        "documentURL": "/nuxeo/site/api/v1/id/afb373f1-08ed-4228-bfe8-9f93131f8c84"
     },
     "properties": {
         "common:icon": "/icons/domain.gif",

@@ -3,7 +3,7 @@
     "entries": [
                 {
                 "contextParameters": {
-                "documentURL": "/nuxeo/site/api/id/afb373f1-08ed-4228-bfe8-9f93131f8c84"
+                "documentURL": "/nuxeo/site/api/v1/id/afb373f1-08ed-4228-bfe8-9f93131f8c84"
                 },
                 "entity-type": "document",
                 "path": "/default-domain/sections",
@@ -13,7 +13,7 @@
                 },
                 {
                 "contextParameters": {
-                "documentURL": "/nuxeo/site/api/id/afb373f1-08ed-4228-bfe8-9f93131f8c84"
+                "documentURL": "/nuxeo/site/api/v1/id/afb373f1-08ed-4228-bfe8-9f93131f8c84"
                 },
                 "entity-type": "document",
                 "path": "/default-domain/workspaces",
