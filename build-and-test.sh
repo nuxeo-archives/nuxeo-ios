@@ -20,7 +20,6 @@ echo "nuxeo.wizard.done=true" >> tomcat/bin/nuxeo.conf
 # deploy nuxeo-rest-api
 echo "init" >> tomcat/nxserver/data/installAfterRestart.log
 echo "install nuxeo-rest-api" >> tomcat/nxserver/data/installAfterRestart.log
-exit 1
 start_server $HERE/tomcat 127.0.0.1
 
 # Prepare CocoaPod workspace
