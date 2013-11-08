@@ -1,5 +1,9 @@
 # Nuxeo iOS projects
 
+## Deprecated
+
+This project is now **deprecated**. But, you might want to check our new repository about [Nuxeo SDK iOS](https://github.com/nuxeo/nuxeo-sdk-ios).
+
 ## Nuxeo AutomationClient
 
 Nuxeo AutomationClient using an automation client written in Objective C.
